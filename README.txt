@@ -1,3 +1,4 @@
+<pre>
                                  |                                             
                                  |                                             
                                  |                                             
@@ -8,9 +9,12 @@
  \___________________________\       /___________________________/             
   `-----------|------|--------\_____/--------|------|-----------'              
              ( )    ( )     O|OOo|oOO|O     ( )    ( )                         
+
+</pre>
+
                                                                                
  P R E S T E S  H A N G A R  -- http://presteshangar.blogspot.com  --  2009-2010
---------------------------------------------------------------------------------
+
 
 LICENSE
 =======
@@ -26,46 +30,36 @@ This work is under Creative Commons Attribution-Noncommercial-Share Alike 3.0 Un
 1.2 Zexe Contribution December 7th, 2010.
 
 December 14th, 2010:
--With the help of Buckaroo, the f5e.ac is now loadable in Blender.
--Fixed nozzle and nozzleneck texture.
--Animated wheels.
--Fixed here and there polygons.
--Added a new model called BlackChrome, loosely based on the Top Gun Mig 28.
-
-
-
-
-
-
-
+- With the help of Buckaroo, the f5e.ac is now loadable in Blender.
+- Fixed nozzle and nozzleneck texture.
+- Animated wheels.
+- Fixed here and there polygons.
+- Added a new model called BlackChrome, loosely based on the Top Gun Mig 28.
 
 December 7th, 2010:
 
--Scaled lights down.
--Added Dave's Altimeter.
--Changed canopy key binding to 'c' and fixed syntax.  In the previous version, the canopy could not change direction mid-way through, now the canopy can open and close whenever.
--Added turbine texture.
--Added new animated afterburner plumes.
--Added reheat, turbine when afterburners are on.
--Modified wing area and wing span so that the F5E Tiger II is controllable for stable landings.
--Added chute.  'd' deploys, 'j' jettison.  Chutes are carried over the MP network.  Chutes can only be deployed once.
--Removed old radar and added a non-functioning model radar.  Something weird happens with FG 2.0 Model View and Radar when radar is functioning.  Therefore radar has been disabled.
--Added new sounds: borrowed from the Eurofighter (gear up, gear down, gear not down, fuel low).  
--Added new sounds: Exceeding 7Gs will initiate a mimick of the Hick maneuver, and coming down below 5Gs will initiate heavy breathing.
--Added customized HUD for F5E Tiger II.  'shift + i' will bring it about.  Target markers are enabled.  Note: The modified HUD is made with the New HUD configuration. Also Gs and AoA are in the HUD, please don't get them confused.
--Sonic boom:  Shock wave added.  For best effect, watch in Fly-by View.
--Shortened the length of the condensation trail on the wing tip.
--New Splash screen, thanks to Michat.
+- Scaled lights down.
+- Added Dave's Altimeter.
+- Changed canopy key binding to 'c' and fixed syntax.  In the previous version, the canopy could not change direction mid-way through, now the canopy can open and close whenever.
+- Added turbine texture.
+- Added new animated afterburner plumes.
+- Added reheat, turbine when afterburners are on.
+- Modified wing area and wing span so that the F5E Tiger II is controllable for stable landings.
+- Added chute.  'd' deploys, 'j' jettison.  Chutes are carried over the MP network.  Chutes can only be deployed once.
+- Removed old radar and added a non-functioning model radar.  Something weird happens with FG 2.0 Model View and Radar when radar is functioning.  Therefore radar has been disabled.
+- Added new sounds: borrowed from the Eurofighter (gear up, gear down, gear not down, fuel low).  
+- Added new sounds: Exceeding 7Gs will initiate a mimick of the Hick maneuver, and coming down below 5Gs will initiate heavy breathing.
+- Added customized HUD for F5E Tiger II.  'shift + i' will bring it about.  Target markers are enabled.  Note: The modified HUD is made with the New HUD configuration. Also Gs and AoA are in the HUD, please don't get them confused.
+- Sonic boom:  Shock wave added.  For best effect, watch in Fly-by View.
+- Shortened the length of the condensation trail on the wing tip.
+- New Splash screen, thanks to Michat.
 
 To- Do:
 
--Animate the wheels spinning.
--Get a functioning radar.
--Texture the inside of the cockpit.
--Create a F5E Tiger II model without the FuelTank load.
-
-
-
+- Animate the wheels spinning.
+- Get a functioning radar.
+- Texture the inside of the cockpit.
+- Create a F5E Tiger II model without the FuelTank load.
 
 1.1 PRESTES Hangar - Valente Division - work
 
