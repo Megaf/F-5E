@@ -8,7 +8,7 @@
  <enable3d>true</enable3d>
 
  <ladder>
-  <name>Pitch Ladder</name>
+  <name>Pitch Ladder</name>=S
   <type>pitch</type>
   <!-- <type>climb-dive</type> -->
   <x>-16</x>

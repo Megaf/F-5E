@@ -40,27 +40,45 @@ David Culp,  davidculp2@comcast.net
 
 	<systems>
 			<autopilot>
-				<path>Aircraft/F-5E/Systems/F-5EAP.xml</path>
+				<path>Aircraft/F-5E/Systems/autopilot5.xml</path>
 			</autopilot>
 		</systems>
 
 		<multiplay>
-			<generic>
-				<int n="0" type="int">0</int>
-				<int n="1" type="int">0</int>
-				<int n="2" type="int">0</int>
-				<int n="3" type="int">0</int>
-				<int n="4" type="int">0</int>
-				<int n="5" type="int">0</int>
-				<int n="6" type="int">0</int>
-				<int n="7" type="int">0</int>
-				<int n="8" type="int">0</int>
-				<int n="9" type="int">0</int>
-				<int n="10" type="int">0</int>
-				<int n="11" type="int">0</int>
-				<int n="12" type="int">0</int>
-			</generic>
-		</multiplay>
+      <chat_display>1</chat_display>
+      <generic> 
+         <!--><int n="0" alias="/sim/crashed" /><-->
+		 
+		  
+        <!-- Nav lights on -->
+      <int n="0" alias="/controls/lighting/whiteSwitch" />
+	   <int n="0" alias="/controls/lighting/navSwitch" />
+      <!-- Beacon on -->
+      <int n="1" alias="/controls/lighting/beaconSwitch" />
+	   <!-- Strobe on -->
+      <int n="1" alias="/controls/lighting/strobeSwitch" />
+      <!-- Landing lights on -->
+      <int n="2" alias="/controls/lighting/landingSwitch" />
+	    <!-- Taxi light on -->
+      <int n="3" alias="/controls/lighting/taxiSwitch" />
+	  
+	  <!-- Engine Status -->
+	  
+	  <int n="5" alias="/engines/engine[0]/state" />
+	  <int n="6" alias="/engines/engine[1]/state" />
+	  <int n="7" alias="/sim/crashed" />
+	  
+        
+        <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
+        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/> 
+		<float n="2" alias="/surface-positions/left-flap-pos-norm"/>
+		<float n="3" alias="/surface-positions/right-flap-pos-norm"/>
+		<float n="4" alias="/sim/model/nozzle-animation"/>
+		<float n="8" alias="/engines/engine[0]/afterburner" /> <!-- Reheat Left Engine -->
+	    <float n="9" alias="/engines/engine[1]/afterburner" /> <!-- Reheat Right Engine -->
+			
+      </generic>
+    </multiplay>
 
 		<!-- Head-up display settings -->
 		<hud>
@@ -88,6 +106,40 @@ David Culp,  davidculp2@comcast.net
 				<z-offset-m archive="y">-2.6708333333</z-offset-m>
 			</config>
 		</view>
+		
+		
+		 <view n="101">
+	   <name>Pilot cam</name>
+        <internal archive="y">false</internal>
+        <config>
+		 <from-model type="bool">true</from-model>
+      <from-model-idx type="int">0</from-model-idx>
+    <x-offset-m archive="y">-0.0005208333333</x-offset-m>
+				<y-offset-m archive="y">0.9525</y-offset-m>
+				<z-offset-m archive="y">-2.9</z-offset-m>
+          <pitch-offset-deg>0</pitch-offset-deg>
+		  <heading-offset-deg>180</heading-offset-deg>
+          <default-field-of-view-deg>95</default-field-of-view-deg>
+        </config>
+      </view>
+	  
+	  
+	   <view n="102">
+	   <name>Over the shoulder</name>
+        <internal archive="y">false</internal>
+        <config>
+		 <from-model type="bool">true</from-model>
+      <from-model-idx type="int">0</from-model-idx>
+     <x-offset-m archive="y">0.22</x-offset-m>
+				<y-offset-m archive="y">1.1</y-offset-m>
+				<z-offset-m archive="y">-2.16</z-offset-m>
+          <pitch-offset-deg>-7</pitch-offset-deg>
+		  <heading-offset-deg>9</heading-offset-deg>
+          <default-field-of-view-deg>65</default-field-of-view-deg>
+        </config>
+      </view>
+		
+		
 		<view n="1">
 			<name>External view</name>
 			<internal archive="y">false</internal>
@@ -261,8 +313,11 @@ David Culp,  davidculp2@comcast.net
 			<!-- FULL -->
 		</flaps>
 
-		<ai>
+	<ai>
 			<scenario>refueling_demo</scenario>
+			<scenario>
+	          <path>Aircraft/F-5E/AI/EGOD_arrestor_cables.xml</path>
+	        </scenario>
 		</ai>
 
 		<!-- turns off GA tower communications -->
@@ -378,6 +433,14 @@ David Culp,  davidculp2@comcast.net
 						</binding>
 					</item>
 
+					  <item n="2">
+        <label>Reload Gun</label>
+        <binding>
+          <command>nasal</command>
+          <script>guns.reload_Cannon()</script>
+        </binding>
+      </item>
+					
 					<item>
 						<label>Landing Lights On/Off</label>
 						<binding>
@@ -934,9 +997,24 @@ David Culp,  davidculp2@comcast.net
 	</instrumentation>
 
 		<nasal>
+		<doors>
+      <file>Aircraft/F-5E/Nasal/doors.nas</file>
+    </doors>
 		<f5e>
 			<file>Aircraft/F-5E/Nasal/f5e.nas</file>
+			 
 		</f5e>
+		
+			<lights>
+      <file>Aircraft/F-5E/Nasal/Lights.nas</file>
+    </lights>
+		
+		
+ <guns>
+      <file>Aircraft/F-5E/Nasal/weapons.nas</file>
+      <file>Aircraft/F-5E/Nasal/revi.nas</file>
+    </guns>
+		
 		<!-- <canopy>
 			<file>Aircraft/F-5E/Nasal/canopy.nas</file>
 		</canopy> -->

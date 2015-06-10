@@ -1,0 +1,1070 @@
+<?xml version="1.0"?>
+<!--
+************************************************************************
+F-5E config file
+David Culp,  davidculp2@comcast.net
+************************************************************************
+-->
+
+<PropertyList>
+
+	<sim>
+
+		<description>Northrop F-5E Tiger II ( YASIM ) </description>
+		<author>David Culp (FDM, 3D) / Isaias Prestes (Cockpit), StuartC </author>
+		<status>V0.4</status>
+
+		<flight-model>yasim</flight-model>
+		<aero>F5-yasim</aero>
+
+		<startup>
+			<splash-texture>Aircraft/F-5E/splash.png</splash-texture>
+		</startup>
+
+		<submodels>
+			<serviceable type="bool">true</serviceable>
+			<path>Aircraft/F-5E/submodels.xml</path>
+			<path>Aircraft/F-5E/Models/Stores/loads.xml</path>
+		</submodels>
+
+		<sound>
+			<path>Aircraft/F-5E/Sounds/F-5E-sound.xml</path>
+		</sound>
+
+		<virtual-cockpit archive="y">true</virtual-cockpit>
+		<allow-toggle-cockpit archive="y">false</allow-toggle-cockpit>
+
+		<panel>
+			<visibility archive="y">false</visibility>
+		</panel>
+
+
+	<systems>
+			<autopilot>
+				<path>Aircraft/F-5E/Systems/autopilot5.xml</path>
+			</autopilot>
+			<autoslats>
+				<path>Aircraft/F-5E/Systems/autoslats.xml</path>
+			</autoslats>
+		</systems>
+
+		<multiplay>
+      <chat_display>1</chat_display>
+      <generic> 
+         <!--><int n="0" alias="/sim/crashed" /><-->
+		 
+		  
+        <!-- Nav lights on -->
+      <int n="0" alias="/controls/lighting/whiteSwitch" />
+	   <int n="0" alias="/controls/lighting/navSwitch" />
+      <!-- Beacon on -->
+      <int n="1" alias="/controls/lighting/beaconSwitch" />
+	   <!-- Strobe on -->
+      <int n="1" alias="/controls/lighting/strobeSwitch" />
+      <!-- Landing lights on -->
+      <int n="2" alias="/controls/lighting/landingSwitch" />
+	    <!-- Taxi light on -->
+      <int n="3" alias="/controls/lighting/taxiSwitch" />
+	  
+	  <!-- Engine Status -->
+	  
+	  <int n="5" alias="/engines/engine[0]/state" />
+	  <int n="6" alias="/engines/engine[1]/state" />
+	  <int n="7" alias="/sim/crashed" />
+	  
+        
+        <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
+        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/> 
+		<float n="2" alias="/surface-positions/left-flap-pos-norm"/>
+		<float n="3" alias="/surface-positions/right-flap-pos-norm"/>
+		<float n="4" alias="/sim/model/nozzle-animation"/>
+		<float n="8" alias="/engines/engine[0]/afterburner" /> <!-- Reheat Left Engine -->
+	    <float n="9" alias="/engines/engine[1]/afterburner" /> <!-- Reheat Right Engine -->
+			
+      </generic>
+    </multiplay>
+
+		<!-- Head-up display settings -->
+		<hud>
+			<path>Aircraft/F-5E/Models/Instruments/Hud/default.xml</path>
+			<path>Aircraft/F-5E/Models/Instruments/Hud/NTPS.xml</path>
+			<visibility type="bool">false</visibility>
+			<visibility type="bool">true</visibility>
+	
+		</hud>
+
+		<instrumentation>
+			<path>Aircraft/F-5E/Systems/instrumentation.xml</path>
+		</instrumentation>
+
+
+		<!-- VIEWS -->
+		<view n="0">
+			<name>Pilot view</name>
+			<internal archive="y">true</internal>
+			<config>
+				<!-- x/y/z == (esquerda, direita)/(cima, baixo)/(frente, tras) -->
+				<pitch-offset-deg>-5.0</pitch-offset-deg>
+				<x-offset-m archive="y">-0.0005208333333</x-offset-m>
+				<y-offset-m archive="y">0.9525</y-offset-m>
+				<z-offset-m archive="y">-2.6708333333</z-offset-m>
+			</config>
+		</view>
+		
+		
+		 <view n="101">
+	   <name>Pilot cam</name>
+        <internal archive="y">false</internal>
+        <config>
+		 <from-model type="bool">true</from-model>
+      <from-model-idx type="int">0</from-model-idx>
+    <x-offset-m archive="y">-0.0005208333333</x-offset-m>
+				<y-offset-m archive="y">0.9525</y-offset-m>
+				<z-offset-m archive="y">-2.9</z-offset-m>
+          <pitch-offset-deg>0</pitch-offset-deg>
+		  <heading-offset-deg>180</heading-offset-deg>
+          <default-field-of-view-deg>95</default-field-of-view-deg>
+        </config>
+      </view>
+	  
+	  
+	   <view n="102">
+	   <name>Over the shoulder</name>
+        <internal archive="y">false</internal>
+        <config>
+		 <from-model type="bool">true</from-model>
+      <from-model-idx type="int">0</from-model-idx>
+     <x-offset-m archive="y">0.22</x-offset-m>
+				<y-offset-m archive="y">1.1</y-offset-m>
+				<z-offset-m archive="y">-2.16</z-offset-m>
+          <pitch-offset-deg>-7</pitch-offset-deg>
+		  <heading-offset-deg>9</heading-offset-deg>
+          <default-field-of-view-deg>65</default-field-of-view-deg>
+        </config>
+      </view>
+		
+		
+		<view n="1">
+			<name>External view</name>
+			<internal archive="y">false</internal>
+		</view>
+		<view n="2">
+			<name>Runway view</name>
+			<internal archive="y">false</internal>
+			<config>
+				<z-offset-m type="double" archive="y">-40.0</z-offset-m>
+				<pitch-offset-deg archive="y"> 12.0</pitch-offset-deg>
+			</config>
+		</view>
+		<view n="3">
+			<internal archive="y">false</internal>
+		</view>
+		<view n="4">
+			<internal archive="y">false</internal>
+		</view>
+		<view n="5">
+			<internal archive="y">false</internal>
+		</view>
+		<view n="6">
+			<internal archive="y">false</internal>
+		</view>
+
+		<view n="1500">
+			<name>Tail</name>
+			<type>lookfrom</type>
+			<internal archive="y">true</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+				<x-offset-m archive="y">-0.002604166667</x-offset-m>
+				<y-offset-m archive="y">3.692873333</y-offset-m>
+				<z-offset-m archive="y">12.72873333</z-offset-m>
+				<pitch-offset-deg>-10</pitch-offset-deg>
+		        <heading-offset-deg type="double">0</heading-offset-deg>
+				<default-field-of-view-deg>88</default-field-of-view-deg>
+				<limits>
+					<enabled type="bool">true</enabled>
+					<left>
+						<heading-max-deg type="double">140</heading-max-deg>
+						<x-offset-max-m type="double">0.20</x-offset-max-m>
+						<x-offset-threshold-deg type="double">25</x-offset-threshold-deg>
+					</left>
+					<right>
+						<heading-max-deg type="double">140</heading-max-deg>
+						<x-offset-max-m type="double">0.20</x-offset-max-m>
+						<x-offset-threshold-deg type="double">25</x-offset-threshold-deg>
+					</right>
+				</limits>
+			</config>
+		</view>
+		<view n="1501">
+			<name>Six view</name>
+			<type>lookfrom</type>
+			<internal archive="y">false</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<ground-level-nearplane-m type="double">0.01f</ground-level-nearplane-m>
+				<x-offset-m archive="y">0.0</x-offset-m>
+				<y-offset-m archive="y">2.90476</y-offset-m>
+				<z-offset-m archive="y">1.69624</z-offset-m>
+				<pitch-offset-deg>-12</pitch-offset-deg>
+		        <heading-offset-deg type="double">180</heading-offset-deg>
+			</config>
+		</view>
+		<view n="1502">
+		    <name>Left Wing</name>
+		    <type>lookfrom</type>
+		    <internal archive="y">false</internal>
+		    <config>
+		      <from-model type="bool">true</from-model>
+		      <from-model-idx type="int">0</from-model-idx>
+		      <ground-level-nearplane-m type="double">0.01f</ground-level-nearplane-m>
+		      <default-field-of-view-deg type="double">55</default-field-of-view-deg>
+		      <pitch-offset-deg>-8.0</pitch-offset-deg>
+		      <heading-offset-deg type="double">0</heading-offset-deg> <!-- parallel to the panel -->
+		      <x-offset-m archive="y"> -2.24805 </x-offset-m> <!--Left/Right -->
+		      <y-offset-m archive="y"> -0.074219 </y-offset-m> <!--Up/Down -->
+		      <z-offset-m archive="y">  4.08724 </z-offset-m> <!--Fdw/Back -->
+		    </config>
+	    </view>
+		<view n="1503">
+		    <name>Right Wing</name>
+		    <type>lookfrom</type>
+		    <internal archive="y">false</internal>
+		    <config>
+		      <from-model type="bool">true</from-model>
+		      <from-model-idx type="int">0</from-model-idx>
+		      <ground-level-nearplane-m type="double">0.01f</ground-level-nearplane-m>
+		      <default-field-of-view-deg type="double">55</default-field-of-view-deg>
+		      <pitch-offset-deg>-8.0</pitch-offset-deg>
+		      <heading-offset-deg type="double">0</heading-offset-deg> <!-- parallel to the panel -->
+		      <x-offset-m archive="y">  2.24805 </x-offset-m> <!--Left/Right -->
+		      <y-offset-m archive="y"> -0.074219 </y-offset-m> <!--Up/Down -->
+		      <z-offset-m archive="y">  4.08724 </z-offset-m> <!--Fdw/Back -->
+		    </config>
+	    </view>
+		<view n="1504">
+		    <name>Tip Wing</name>
+		    <type>lookfrom</type>
+		    <internal archive="y">false</internal>
+		    <config>
+			      <from-model type="bool">true</from-model>
+			      <from-model-idx type="int">0</from-model-idx>
+			      <ground-level-nearplane-m type="double">0.01f</ground-level-nearplane-m>
+			      <default-field-of-view-deg type="double">45</default-field-of-view-deg>
+			      <pitch-offset-deg>-18.0</pitch-offset-deg>
+			      <heading-offset-deg type="double">0</heading-offset-deg> <!-- parallel to the panel -->
+			      <x-offset-m archive="y">  4.23144 </x-offset-m> <!--Left/Right -->
+			      <y-offset-m archive="y"> 0.132718 </y-offset-m> <!--Up/Down -->
+			      <z-offset-m archive="y"> 1.63852 </z-offset-m> <!--Fdw/Back -->
+		    </config>
+	    </view>
+		<view n="1504">
+		    <name>Nose Gear</name>
+		    <type>lookfrom</type>
+		    <internal archive="y">false</internal>
+		    <config>
+			      <from-model type="bool">true</from-model>
+			      <from-model-idx type="int">0</from-model-idx>
+			      <ground-level-nearplane-m type="double">0.01f</ground-level-nearplane-m>
+			      <default-field-of-view-deg type="double">91</default-field-of-view-deg>
+			      <pitch-offset-deg>-8.0</pitch-offset-deg>
+			      <heading-offset-deg type="double">0</heading-offset-deg> <!-- parallel to the panel -->
+			      <x-offset-m archive="y">  0.000000 </x-offset-m> <!--Left/Right -->
+			      <y-offset-m archive="y"> -0.779873 </y-offset-m> <!--Up/Down -->
+			      <z-offset-m archive="y"> -3.06102 </z-offset-m> <!--Fdw/Back -->
+		    </config>
+	    </view>
+		<!-- END - VIEWS -->
+
+		<chase-distance-m>-18</chase-distance-m>
+
+		<model>
+			<path>Aircraft/F-5E/Models/F-5E-TigerII.xml</path>
+			
+			<turbine>
+				<file type="string">Default</file>
+			</turbine>
+			
+			<!-- Add pushback -->
+			 <pushback>
+			  <kp type="double">100</kp>
+			  <ki type="double">25</ki>
+			  <kd type="double">0</kd>
+			  <position-norm type="double">1</position-norm>
+			 </pushback>
+
+		</model>
+
+
+		<flaps>
+			<setting>0.000</setting>
+			<!-- UP -->
+			<setting>0.150</setting>
+			<!-- CR -->
+			<setting>0.500</setting>
+			<!-- M1 -->
+			<setting>0.750</setting>
+			<!-- M2 -->
+			<setting>1.000</setting>
+			<!-- FULL -->
+		</flaps>
+
+		<ai>
+			<scenario>refueling_demo</scenario>
+			<scenario>
+	          <path>Aircraft/F-5E/AI/EGOD_arrestor_cables.xml</path>
+	        </scenario>
+		</ai>
+
+		<!-- turns off GA tower communications -->
+		<ATC>
+			<enabled type="bool">false</enabled>
+		</ATC>
+
+		<!-- turns off GA traffic -->
+		<ai-traffic>
+			<enabled type="bool">false</enabled>
+		</ai-traffic>
+
+		<!-- A aircraft help menu -->
+		<help>
+			<title>Northrop F-5E Tiger II</title>
+			<line>Choose your favorite texture using the F-5E menu</line>
+			<line>Choose your Aircraft load out from the F5E Menu.</line>
+			<line>You must also select one pylon again manually from the Equipment menu for the weight to calculate ( this is a bug ).</line>
+			<line>Your Cannons can only be loaded on the ground</line>
+   <key>
+    <name>D/d</name>
+    <desc>Toggle canopy</desc>
+   </key>
+  
+   <key>
+    <name>o/O</name>
+    <desc>Toggle tailhook</desc>
+   </key>
+   
+   <key>
+    <name>s</name>
+    <desc>Fire Cannons</desc>
+   </key>
+  
+  
+   <key>
+    <name>j (lower case j)</name>
+    <desc>Jettison drag 'chute</desc>
+   </key>
+  
+			<key>
+				<name>Ctrl-n</name>
+				<desc>Toggles Radar RWS / TWS AUTO Modes</desc>
+			</key>
+			<key>
+				<name>E</name>
+				<desc>Decrease Radar Range</desc>
+			</key>
+			<key>
+				<name>R</name>
+				<desc>Increase Radar Range</desc>
+			</key>
+			<key>
+				<name>q</name>
+				<desc>Toggles Radar Standby Mode</desc>
+			</key>
+ 
+		</help>
+
+		<!-- Entradas para o menu de apoio para controle da aeronave -->
+		<menubar>
+			<default>
+				<menu n="100">
+					<label>F-5E Tiger II</label>
+					<enabled type="bool">true</enabled>
+					<item>
+						<label>Select Livery</label>
+						<binding>
+							<command>nasal</command>
+							<script>aircraft.livery.dialog.open()</script>
+						</binding>
+					</item>
+
+				 <item n="2">
+        <label>Reload Gun</label>
+        <binding>
+          <command>nasal</command>
+          <script>guns.reload_Cannon()</script>
+        </binding>
+      </item>
+	
+  <item n="3">
+        <label>No load</label>
+        <binding>
+          <command>nasal</command>
+          <script>load.Clean()</script>
+        </binding>
+      </item>
+      <item n="4">
+        <label>CAP</label>
+        <binding>
+          <command>nasal</command>
+          <script>load.CAP()</script>
+        </binding>
+      </item>
+      <item n="5">
+        <label>CAP Extended loiter</label>
+        <binding>
+          <command>nasal</command>
+          <script>load.CAPextended()</script>
+        </binding>
+      </item>
+	  
+	   <item n="6">
+        <label>Bomb Run</label>
+        <binding>
+          <command>nasal</command>
+          <script>load.bombrun()</script>
+        </binding>
+      </item>
+	  
+	  <item n="7">
+        <label>Heavy Bomb Run</label>
+        <binding>
+          <command>nasal</command>
+          <script>load.bombrunheavy()</script>
+        </binding>
+      </item>
+	  
+	   <item n="8">
+        <label>Bomb Run - long Range</label>
+        <binding>
+          <command>nasal</command>
+          <script>load.bombrunlong()</script>
+        </binding>
+      </item>
+	  
+	   <item n="9">
+        <label>Ground Attack</label>
+        <binding>
+          <command>nasal</command>
+          <script>load.GAmulti()</script>
+        </binding>
+      </item>
+	  
+	   <item n="10">
+        <label>Ground Attack extrended range</label>
+        <binding>
+          <command>nasal</command>
+          <script>load.GAmultiextended()</script>
+        </binding>
+      </item>
+	  
+      <item n="11">
+        <label>Ferry configuration</label>
+        <binding>
+          <command>nasal</command>
+          <script>load.Ferry()</script>
+        </binding>
+      </item>
+     
+      <item n="1">
+        <label>Target Tracking</label>
+        <name>track_target</name>
+        <binding>
+           <command>dialog-show</command>
+           <dialog-name>track_target</dialog-name>
+        </binding>
+      </item> 
+				</menu>
+			</default>
+		</menubar>
+
+		<rendering>
+			<redout>
+				<parameters>
+					<blackout-onset-g>4.0</blackout-onset-g>
+					<blackout-complete-g>8.0</blackout-complete-g>
+				</parameters>
+			</redout>
+		</rendering>
+		
+		
+	<!-- payload options -->
+
+<weight n="0">
+<name>pylon1.L</name>
+<weight-lb>0</weight-lb>
+<selected>NONE</selected>
+<opt>
+<name>NONE</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>AIM-9</name>
+<lbs>190.0</lbs>
+</opt>
+</weight>	
+
+<weight n="1">
+<name>pylon2.L</name>
+<weight-lb>0</weight-lb>
+<selected>NONE</selected>
+<opt>
+<name>NONE</name>
+<lbs>0</lbs>
+</opt>
+
+<opt>
+<name>AIM-9</name>
+<lbs>190.0</lbs>
+</opt>
+<opt>
+<name>AIM-120</name>
+<lbs>320.0</lbs>
+</opt>
+
+<opt>
+<name>MK-82</name>
+<lbs>500.0</lbs>
+</opt>
+</weight>	
+
+
+<weight n="2">
+<name>pylon3.L</name>
+<tank>3</tank>
+<weight-lb>0</weight-lb>
+<selected>NONE</selected>
+<opt>
+<name>NONE</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>Droptank</name>
+<lbs>184.0</lbs>
+<gals>150</gals>
+</opt>
+<opt>
+<name>Ferrytank</name>
+<lbs>220.0</lbs>
+<gals>275</gals>
+</opt>
+<opt>
+<name>AIM-120</name>
+<lbs>320.0</lbs>
+</opt>
+<opt>
+<name>Matra</name>
+<lbs>700.0</lbs>
+</opt>
+<opt>
+<name>MK-82</name>
+<lbs>500.0</lbs>
+</opt>
+<opt>
+<name>MK-83</name>
+<lbs>1014.0</lbs>
+</opt>
+</weight>
+
+
+<weight n="3">
+<name>pylon.C</name>
+<tank>4</tank>
+<weight-lb>0</weight-lb>
+<selected>NONE</selected>
+<opt>
+<name>NONE</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>Droptank</name>
+<lbs>184.0</lbs>
+<gals>150</gals>
+</opt>
+<opt>
+<name>Ferrytank</name>
+<lbs>220.0</lbs>
+<gals>275</gals>
+</opt>
+<opt>
+<name>MK-82</name>
+<lbs>500.0</lbs>
+</opt>
+<opt>
+<name>MK-83</name>
+<lbs>1014.0</lbs>
+</opt>
+</weight>	
+	
+
+
+<weight n="4">
+<name>pylon3.R</name>
+<tank>5</tank>
+<weight-lb>0</weight-lb>
+<selected>NONE</selected>
+<opt>
+<name>NONE</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>Droptank</name>
+<lbs>184.0</lbs>
+<gals>150</gals>
+</opt>
+<opt>
+<name>Ferrytank</name>
+<lbs>220.0</lbs>
+<gals>275</gals>
+</opt>
+<opt>
+<name>AIM-120</name>
+<lbs>320.0</lbs>
+</opt>
+<opt>
+<name>Matra</name>
+<lbs>700.0</lbs>
+</opt>
+<opt>
+<name>MK-82</name>
+<lbs>500.0</lbs>
+</opt>
+<opt>
+<name>MK-83</name>
+<lbs>1014.0</lbs>
+</opt>
+</weight>
+
+
+
+<weight n="5">
+<name>pylon2.R</name>
+<weight-lb>0</weight-lb>
+<selected>NONE</selected>
+<opt>
+<name>NONE</name>
+<lbs>0</lbs>
+</opt>
+
+<opt>
+<name>AIM-9</name>
+<lbs>190.0</lbs>
+</opt>
+<opt>
+<name>AIM-120</name>
+<lbs>320.0</lbs>
+</opt>
+<opt>
+<name>MK-82</name>
+<lbs>500.0</lbs>
+</opt>
+</weight>
+
+
+<weight n="6">
+<name>pylon1.R</name>
+<weight-lb>0</weight-lb>
+<selected>NONE</selected>
+<opt>
+<name>NONE</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>AIM-9</name>
+<lbs>190.0</lbs>
+</opt>
+</weight>
+		
+
+	</sim>
+	<!-- END OF SIM -->
+
+	<systems>
+		<refuel>
+			<type>probe</type>
+		</refuel>
+	</systems>
+
+	<consumables>
+		<fuel>
+			<tank n="0">
+				<level-gal_us archive="y">225.6</level-gal_us>
+			</tank>
+			<tank n="1">
+				<level-gal_us archive="y">225.6</level-gal_us>
+			</tank>
+			<tank n="2">
+				<level-gal_us archive="y">225.6</level-gal_us>
+			</tank>
+			 <tank n="3">
+        <name>Left-DropTank</name>
+        <selected type="bool">false</selected>
+      </tank>
+	   <tank n="4">
+        <name>Centre-DropTank</name>
+        <selected type="bool">false</selected>
+      </tank>
+	   <tank n="5">
+        <name>Right-DropTank</name>
+        <selected type="bool">false</selected>
+      </tank>
+		</fuel>
+	</consumables>
+
+
+	<controls>
+		
+
+		<gear>
+			<brake-parking type="bool">1</brake-parking>
+		</gear>
+
+		
+		
+		<lighting>
+			<instruments-norm type="double">0.8</instruments-norm>
+			<landing-lights type="bool">false</landing-lights>
+			<beacon type="bool">false</beacon>
+			<strobe type="bool">false</strobe>
+			<nav-lights type="bool">false</nav-lights>
+			<cabin-lights type="bool">false</cabin-lights>
+			<wing-lights type="bool">false</wing-lights>
+			<taxi-light type="bool">false</taxi-light>
+			<instrument-lights type="bool">false</instrument-lights>
+		</lighting>
+		
+		
+
+		<armament>
+			<gunsight>
+				<power-on type="bool">true</power-on>
+				<intensity type="double">0.3</intensity>
+			</gunsight>
+			<master-arm type="bool">false</master-arm>
+			 <station n="0">
+        <release type="bool">false</release>
+      </station>
+      <station n="1">
+        <release type="bool">false</release>
+      </station>
+      <station n="2">
+        <release type="bool">false</release>
+      </station>
+      <station n="3">
+        <release type="bool">false</release>
+      </station>
+      <station n="4">
+        <release type="bool">false</release>
+      </station>
+      <station n="5">
+        <release type="bool">false</release>
+      </station>
+      <station n="6">
+        <release type="bool">false</release>
+      </station>
+		</armament>
+
+	</controls>
+
+	<engines>
+  <engine n="0">
+    <running>true</running>
+    <reverser-position type="double">0.000000</reverser-position>
+  </engine>
+  <engine n="1">
+    <running>true</running>
+    <reverser-position type="double">0.000000</reverser-position>
+  </engine>
+ </engines>
+ 
+ <environment>
+    <turbulence>
+      <use-cloud-turbulence>true</use-cloud-turbulence>
+    </turbulence>
+  </environment>
+
+	<!-- custom keyboard -->
+	<input>
+		<keyboard>
+
+			<key n="81">
+				<name>Shift-Q</name>
+				<desc>Fuel Cutoff Switch or Lever.</desc>
+				<binding>
+					<condition>
+						<property>/sim/input/selected/engine[0]</property>
+					</condition>
+					<command>property-toggle</command>
+					<property>/controls/engines/engine[0]/cutoff</property>
+				</binding>
+				<binding>
+					<condition>
+						<property>/sim/input/selected/engine[1]</property>
+					</condition>
+					<command>property-toggle</command>
+					<property>/controls/engines/engine[1]/cutoff</property>
+				</binding>
+			</key>
+			
+			
+			
+
+			<key n="79">
+   <name>O</name>
+   <desc>Hook down.</desc>
+   <binding>
+     <command>property-assign</command>
+     <property>controls/gear/tailhook</property>
+     <value type="double">1.0</value>
+   </binding>
+ </key>
+
+ <key n="111">
+   <name>o</name>
+   <desc>Hook Up.</desc>
+   <binding>
+     <command>property-assign</command>
+     <property>controls/gear/tailhook</property>
+     <value type="double">0.0</value>
+   </binding>
+ </key>
+     
+
+    <key n="115">
+     <name>s</name>
+    <desc>Cannon</desc>
+	  <binding>
+	   <command>property-assign</command>
+	   <property>controls/armament/trigger</property>
+	   <value>true</value>
+	  </binding>
+	 <mod-up>
+	  <binding>
+	   <command>property-assign</command>
+	   <property>controls/armament/trigger</property>
+	   <value>false</value>
+	  </binding> 
+	 </mod-up>
+  </key>
+  
+     
+
+			<!-- Radar test code -->
+			<key n="14">
+				<name>Ctrl-n</name>
+				<desc>Toggles Radar RWS / TWS AUTO Modes</desc>
+				<binding>
+					<command>nasal</command>
+					<script>radar.radar_mode_toggle()</script>
+				</binding>
+			</key>
+			<key n="69">
+				<name>E</name>
+				<desc>Decrease Radar Range</desc>
+				<binding>
+					<command>nasal</command>
+					<script>radar.radar_range_control(-1);</script>
+				</binding>
+			</key>
+			<key n="82">
+				<name>R</name>
+				<desc>Increase Radar Range</desc>
+				<binding>
+					<command>nasal</command>
+					<script>radar.radar_range_control(1);</script>
+				</binding>
+			</key>
+			<key n="113">
+				<name>q</name>
+				<desc>Toggle radar standby mode</desc>
+				<binding>
+					<command>property-toggle</command>
+					<property>instrumentation/radar/radar-standby</property>
+				</binding>
+			</key>
+<key n="68">
+    <name>D</name>
+    <desc>Passenger door</desc>
+    <binding>
+      <command>nasal</command>
+      <script>doors.doorsystem.passengerexport();</script>
+    </binding>
+  </key>
+
+   <key n="100">
+    <name>d</name>
+    <desc>Crew door</desc>
+    <binding>
+      <command>nasal</command>
+      <script>doors.doorsystem.crewexport();</script>
+    </binding>
+  </key>
+  
+  <key n="123">
+     <name>}</name>
+     <desc>Engine Autostop</desc>
+    <binding>
+        <command>nasal</command>
+        <script>emu.autostop();</script>
+    </binding>
+  </key>
+  
+   <key n="125">
+     <name>}</name>
+     <desc>Engine Autostart</desc>
+    <binding>
+        <command>nasal</command>
+        <script>emu.autostart();</script>
+    </binding>
+  </key>
+
+		</keyboard>
+	</input>
+
+
+
+		<instrumentation>
+
+		<marker-beacon>
+			<volume type="double" archive="y">0.0</volume>
+		</marker-beacon>
+		<rdmi-mode type="int">0</rdmi-mode>
+		<!-- 0=TAC, 1=VOR, 2=ADF -->
+
+		<!-- RADAR code test -->
+		<rwr>
+      <display-lighting-intens type="double">0.4</display-lighting-intens>
+      <symbology-lighting-intens type="double">1</symbology-lighting-intens>
+    </rwr>
+
+    <enav><selected type="int">3</selected></enav>
+
+    <radar>
+      <range type="int" archive="y">20</range>
+      <range-factor type="double" archive="n">0.001888</range-factor>
+      <minimized type="bool" archive="y">false</minimized>
+      <selected type="int">3</selected>
+      <!-- inicio en pruebas -->
+      <enabled type="bool">true</enabled>
+      <az-field type="double">140</az-field>
+      <range type="double">80</range>
+      <range-selected type="double">20</range-selected>
+      <radar2-range type="double">80</radar2-range>
+      <display-rdr type="bool">true</display-rdr>
+      <radar-standby type="int">0</radar-standby>
+      <mode>
+        <rws type="bool">true</rws>
+        <tws-auto type="bool">false</tws-auto>
+      </mode>
+    </radar>
+ 
+    <radar2>
+      <sweep-width-m type="double">0.0844</sweep-width-m>
+      <range-width-m type="double">0.0846</range-width-m>
+      <radius-ppi-display-m type="double">0.0846</radius-ppi-display-m>
+      <hud-eye-dist-m type="double">0.766</hud-eye-dist-m>
+      <hud-radius-m type="double">0.071</hud-radius-m>
+      <hud-vertical-offset-m type="double">-0.025</hud-vertical-offset-m>
+    </radar2>
+		<ecm>
+			<on-off type="bool">true</on-off>
+		</ecm>
+	</instrumentation>
+<nasal>
+ <doors>
+      <file>Aircraft/F-5E/Nasal/doors.nas</file>
+    </doors>
+
+		<f5e>
+			<file>Aircraft/F-5E/Nasal/f5e.nas</file>
+			
+		
+		</f5e>
+		
+		<lights>
+      <file>Aircraft/F-5E/Nasal/Lights.nas</file>
+    </lights>
+		
+		<F-5_fuel>
+   <file>Aircraft/F-5E/Nasal/fuel.nas</file>
+  </F-5_fuel>
+		
+		<livery>
+			<file>Aircraft/F-5E/Nasal/livery.nas</file>
+		</livery>
+		
+<radar>
+<file>Aircraft/F-5E/Nasal/radar.nas</file> 
+    </radar>
+<radar2>
+<file>Aircraft/F-5E/Nasal/radar2.nas</file>
+</radar2>
+<rwr>
+ <file>Aircraft/F-5E/Models/Interior/Panel/Instruments/Radar/rwr.nas</file>
+</rwr> 
+
+<radardist>
+<file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
+</radardist>
+
+<limits>
+			<file>Aircraft/F-5E/Nasal/limits.nas</file>
+		</limits>
+
+ <guns>
+      <file>Aircraft/F-5E/Nasal/weapons.nas</file>
+      <file>Aircraft/F-5E/Nasal/revi.nas</file>
+    </guns>
+	
+	
+	 <load>
+      <file>Aircraft/F-5E/Nasal/ext_stores.nas</file>
+    </load>
+
+<aar> 
+<file>Aircraft/Generic/aar.nas</file>
+</aar>
+
+ <engines>
+   <file>Aircraft/F-5E/Nasal/generic-yasim-engine.nas</file>
+  </engines>
+  
+  <emu>
+   <file>Aircraft/F-5E/Nasal/emu.nas</file>
+  </emu>
+	</nasal>
+
+	<limits>
+		<max-flap-extension-speed>
+			<flaps>0.100</flaps>
+			<speed>941</speed>
+		</max-flap-extension-speed>
+		<max-flap-extension-speed>
+			<flaps>0.151</flaps>
+			<speed>917</speed>
+		</max-flap-extension-speed>
+		<max-flap-extension-speed>
+			<flaps>0.490</flaps>
+			<speed>250</speed>
+		</max-flap-extension-speed>
+		<max-flap-extension-speed>
+			<flaps>0.700</flaps>
+			<speed>250</speed>
+		</max-flap-extension-speed>
+		<max-flap-extension-speed>
+			<flaps>1.000</flaps>
+			<speed>200</speed>
+		</max-flap-extension-speed>
+
+		<vne>941</vne>
+
+		<max-gear-extension-speed>270</max-gear-extension-speed>
+
+		<max-positive-g>7.33</max-positive-g>
+		<max-negative-g>-3.00</max-negative-g>
+
+	</limits>
+
+
+</PropertyList>
+
