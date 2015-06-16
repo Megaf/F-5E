@@ -5,7 +5,7 @@ kids 1
 OBJECT poly
 name "disk"
 loc 0 0.722097 -0.32717
-texture "C:/Program Files/FlightGear/data/Aircraft/F-5E/Models/panel.png"
+texture "Aircraft/F-5E/Models/panel.png"
 crease 45.000000
 numvert 49
 -3.17686 0 0.126586
