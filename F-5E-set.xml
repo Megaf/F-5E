@@ -69,7 +69,7 @@ David Culp,  davidculp2@comcast.net
 	  <int n="7" alias="/sim/crashed" />
 	  
         
-        <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
+        <float n="0" alias="/fdm/jsbsim/systems/caopy/command"/>
         <float n="1" alias="/instrumentation/doors/passenger/position-norm"/> 
 		<float n="2" alias="/surface-positions/left-flap-pos-norm"/>
 		<float n="3" alias="/surface-positions/right-flap-pos-norm"/>
@@ -670,12 +670,23 @@ David Culp,  davidculp2@comcast.net
 				</binding>
 			</key>
 
+     <key n="67">
+     <name>shift-c</name>
+     <desc>toggle canopy</desc>
+     <binding>
+       <command>property-assign</command>
+       <property>instrumentation/doors/crew/position-norm</property>
+	<value>0.00</value>
+     </binding>
+    </key>
+
      <key n="99">
      <name>c</name>
      <desc>toggle canopy</desc>
      <binding>
-       <command>property-toggle</command>
-       <property>fdm/jsbsim/systems/canopy/command</property>
+       <command>property-assign</command>
+       <property>instrumentation/doors/crew/position-norm</property>
+	<value>1.00</value>
      </binding>
     </key>
 

@@ -1620,7 +1620,8 @@ RADAR
     <type>rotate</type>
      <object-name>CanopyGlass</object-name>
   <object-name>CanopyFrame</object-name>
-    <property>instrumentation/doors/crew/position-norm</property>
+    <property>/fdm/jsbsim/systems/canopy/position</property>
+    <!-- property>instrumentation/doors/crew/position-norm</property -->
    <factor>30</factor>
     <interpolation>
       <entry><ind> 0 </ind><dep>  0 </dep></entry>
