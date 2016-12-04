@@ -578,7 +578,7 @@ Peter Brendt (JWocky) (refurbish for FG 2016)
 			</instrumentation>
 
 			<autopilot>
-				<path>Aircraft/fkdr1/Systems/SYS8_1_autopilot.xml</path>
+				<path>Aircraft/F-5E/Systems/SYS8_1_autopilot.xml</path>
 			</autopilot>
 
 			<!-- autopilot>
