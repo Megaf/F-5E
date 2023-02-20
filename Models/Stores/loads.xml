@@ -26,16 +26,12 @@
 <type>select</type>
 <object-name>left-aim9-pos-1</object-name>      
 <condition>
-<and>
+
 <equals>
 <property>sim/weight[0]/selected</property>
 <value>AIM-9</value>
 </equals>
-<equals>
-<property>controls/armament/station[0]/release</property>
-<value>false</value>
-</equals>
-</and>
+
 </condition>
 </animation> 
 
@@ -58,16 +54,12 @@
 <type>select</type>
 <object-name>left-aim9-pos-2</object-name>      
 <condition>
-<and>
+
 <equals>
 <property>sim/weight[1]/selected</property>
 <value>AIM-9</value>
 </equals>
-<equals>
-<property>controls/armament/station[1]/release</property>
-<value>false</value>
-</equals>
-</and>
+
 </condition>
 </animation> 
 
@@ -86,16 +78,12 @@
 <type>select</type>
 <object-name>left-aim120-pos-2</object-name>      
 <condition>
-<and>
+
 <equals>
 <property>sim/weight[1]/selected</property>
 <value>AIM-120</value>
 </equals>
-<equals>
-<property>controls/armament/station[1]/release</property>
-<value>false</value>
-</equals>
-</and>
+
 </condition>
 </animation> 
 
@@ -117,16 +105,12 @@
 <type>select</type>
 <object-name>left-mk82-pos-2</object-name>      
 <condition>
-<and>
+
 <equals>
 <property>sim/weight[1]/selected</property>
 <value>MK-82</value>
 </equals>
-<equals>
-<property>controls/armament/station[1]/release</property>
-<value>false</value>
-</equals>
-</and>
+
 </condition>
 </animation> 
 
@@ -148,16 +132,12 @@
 <type>select</type>
 <object-name>left-droptank-1</object-name>      
 <condition>
-<and>
+
 <equals>
 <property>sim/weight[2]/selected</property>
 <value>Droptank</value>
 </equals>
-<equals>
-<property>controls/armament/station[2]/release</property>
-<value>false</value>
-</equals>
-</and>
+
 </condition>
 </animation> 
 
@@ -176,16 +156,12 @@
 <type>select</type>
 <object-name>left-ferrytank-1</object-name>      
 <condition>
-<and>
+
 <equals>
 <property>sim/weight[2]/selected</property>
 <value>Ferrytank</value>
 </equals>
-<equals>
-<property>controls/armament/station[2]/release</property>
-<value>false</value>
-</equals>
-</and>
+
 </condition>
 </animation> 
 
@@ -207,16 +183,12 @@
 <type>select</type>
 <object-name>left-aim120-pos-3</object-name>      
 <condition>
-<and>
+
 <equals>
 <property>sim/weight[2]/selected</property>
 <value>AIM-120</value>
 </equals>
-<equals>
-<property>controls/armament/station[2]/release</property>
-<value>false</value>
-</equals>
-</and>
+
 </condition>
 </animation> 
 
@@ -236,16 +208,12 @@
 <type>select</type>
 <object-name>left-matra-pos-3</object-name>      
 <condition>
-<and>
+
 <equals>
 <property>sim/weight[2]/selected</property>
 <value>Matra</value>
 </equals>
-<equals>
-<property>controls/armament/station[2]/release</property>
-<value>false</value>
-</equals>
-</and>
+
 </condition>
 </animation> 
 
@@ -265,16 +233,12 @@
 <type>select</type>
 <object-name>left-mk82-pos-3</object-name>      
 <condition>
-<and>
+
 <equals>
 <property>sim/weight[2]/selected</property>
 <value>MK-82</value>
 </equals>
-<equals>
-<property>controls/armament/station[2]/release</property>
-<value>false</value>
-</equals>
-</and>
+
 </condition>
 </animation> 
 
@@ -294,16 +258,12 @@
 <type>select</type>
 <object-name>left-mk83-pos-3</object-name>      
 <condition>
-<and>
+
 <equals>
 <property>sim/weight[2]/selected</property>
 <value>MK-83</value>
 </equals>
-<equals>
-<property>controls/armament/station[2]/release</property>
-<value>false</value>
-</equals>
-</and>
+
 </condition>
 </animation> 
 
@@ -324,16 +284,12 @@
 <type>select</type>
 <object-name>centre-droptank</object-name>      
 <condition>
-<and>
+
 <equals>
 <property>sim/weight[3]/selected</property>
 <value>Droptank</value>
 </equals>
-<equals>
-<property>controls/armament/station[3]/release</property>
-<value>false</value>
-</equals>
-</and>
+
 </condition>
 </animation> 
 
@@ -352,16 +308,12 @@
 <type>select</type>
 <object-name>centre-ferrytank</object-name>      
 <condition>
-<and>
+
 <equals>
 <property>sim/weight[3]/selected</property>
 <value>Ferrytank</value>
 </equals>
-<equals>
-<property>controls/armament/station[3]/release</property>
-<value>false</value>
-</equals>
-</and>
+
 </condition>
 </animation> 
 
@@ -382,16 +334,12 @@
 <type>select</type>
 <object-name>centre-mk82-pos</object-name>      
 <condition>
-<and>
+
 <equals>
 <property>sim/weight[3]/selected</property>
 <value>MK-82</value>
 </equals>
-<equals>
-<property>controls/armament/station[3]/release</property>
-<value>false</value>
-</equals>
-</and>
+
 </condition>
 </animation> 
 
@@ -412,16 +360,12 @@
 <type>select</type>
 <object-name>centre-mk83-pos</object-name>      
 <condition>
-<and>
+
 <equals>
 <property>sim/weight[3]/selected</property>
 <value>MK-83</value>
 </equals>
-<equals>
-<property>controls/armament/station[3]/release</property>
-<value>false</value>
-</equals>
-</and>
+
 </condition>
 </animation> 
 
@@ -442,16 +386,12 @@
 <type>select</type>
 <object-name>right-droptank-1</object-name>      
 <condition>
-<and>
+
 <equals>
 <property>sim/weight[4]/selected</property>
 <value>Droptank</value>
 </equals>
-<equals>
-<property>controls/armament/station[4]/release</property>
-<value>false</value>
-</equals>
-</and>
+
 </condition>
 </animation> 
 
@@ -471,16 +411,12 @@
 <type>select</type>
 <object-name>right-ferrytank-1</object-name>      
 <condition>
-<and>
+
 <equals>
 <property>sim/weight[4]/selected</property>
 <value>Ferrytank</value>
 </equals>
-<equals>
-<property>controls/armament/station[4]/release</property>
-<value>false</value>
-</equals>
-</and>
+
 </condition>
 </animation> 
 
@@ -500,16 +436,12 @@
 <type>select</type>
 <object-name>right-aim120-pos-3</object-name>      
 <condition>
-<and>
+
 <equals>
 <property>sim/weight[4]/selected</property>
 <value>AIM-120</value>
 </equals>
-<equals>
-<property>controls/armament/station[4]/release</property>
-<value>false</value>
-</equals>
-</and>
+
 </condition>
 </animation> 
 
@@ -530,16 +462,12 @@
 <type>select</type>
 <object-name>right-matra-pos-3</object-name>      
 <condition>
-<and>
+
 <equals>
 <property>sim/weight[4]/selected</property>
 <value>Matra</value>
 </equals>
-<equals>
-<property>controls/armament/station[4]/release</property>
-<value>false</value>
-</equals>
-</and>
+
 </condition>
 </animation> 
 
@@ -558,16 +486,12 @@
 <type>select</type>
 <object-name>right-mk82-pos-3</object-name>      
 <condition>
-<and>
+
 <equals>
 <property>sim/weight[4]/selected</property>
 <value>MK-82</value>
 </equals>
-<equals>
-<property>controls/armament/station[4]/release</property>
-<value>false</value>
-</equals>
-</and>
+
 </condition>
 </animation> 
 
@@ -587,16 +511,12 @@
 <type>select</type>
 <object-name>right-mk83-pos-3</object-name>      
 <condition>
-<and>
+
 <equals>
 <property>sim/weight[4]/selected</property>
 <value>MK-83</value>
 </equals>
-<equals>
-<property>controls/armament/station[4]/release</property>
-<value>false</value>
-</equals>
-</and>
+
 </condition>
 </animation> 
 
@@ -618,16 +538,12 @@
 <type>select</type>
 <object-name>right-aim9-pos-2</object-name>      
 <condition>
-<and>
+
 <equals>
 <property>sim/weight[5]/selected</property>
 <value>AIM-9</value>
 </equals>
-<equals>
-<property>controls/armament/station[5]/release</property>
-<value>false</value>
-</equals>
-</and>
+
 </condition>
 </animation> 
 
@@ -647,16 +563,12 @@
 <type>select</type>
 <object-name>right-aim120-pos-2</object-name>      
 <condition>
-<and>
+
 <equals>
 <property>sim/weight[5]/selected</property>
 <value>AIM-120</value>
 </equals>
-<equals>
-<property>controls/armament/station[5]/release</property>
-<value>false</value>
-</equals>
-</and>
+
 </condition>
 </animation> 
 
@@ -675,16 +587,12 @@
 <type>select</type>
 <object-name>right-mk82-pos-2</object-name>      
 <condition>
-<and>
+
 <equals>
 <property>sim/weight[5]/selected</property>
 <value>MK-82</value>
 </equals>
-<equals>
-<property>controls/armament/station[5]/release</property>
-<value>false</value>
-</equals>
-</and>
+
 </condition>
 </animation> 
 
@@ -707,16 +615,12 @@
 <type>select</type>
 <object-name>right-aim9-pos-1</object-name>      
 <condition>
-<and>
+
 <equals>
 <property>sim/weight[6]/selected</property>
 <value>AIM-9</value>
 </equals>
-<equals>
-<property>controls/armament/station[6]/release</property>
-<value>false</value>
-</equals>
-</and>
+
 </condition>
 </animation> 
 

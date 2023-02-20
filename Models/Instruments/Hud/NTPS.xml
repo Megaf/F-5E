@@ -44,7 +44,7 @@
   <enable-climb-dive-marker>false</enable-climb-dive-marker>
   <enable-glide-slope-marker>false</enable-glide-slope-marker>
   <enable-energy-worm>false</enable-energy-worm>
-  <enable-waypoint-marker>false</enable-waypoint-marker>
+  <enable-waypoint-marker>true</enable-waypoint-marker>
  </ladder>
 
 
@@ -314,7 +314,7 @@
           <property>/controls/engines/engine[0]/throttle</property>
           </input>
  </label>
-
+<!--
  <label>
   <name>AP Heading</name>
   <width>25</width>
@@ -400,6 +400,7 @@
           </input>
  </label>
 
+
  <label>
   <name>Distance</name>
   <width>25</width>
@@ -416,7 +417,7 @@
           <property>/instrumentation/gps/wp/wp[1]/distance-nm</property>
           </input>
  </label>
-
+-->
  <label>
   <name>NAV</name>
   <width>25</width>
@@ -544,7 +545,7 @@
 <halign>left</halign>
 <option>right</option>
 </label>
-
+<!--
  <gauge>
   		<name>Rudder</name>
 		<x>-85</x>
@@ -562,7 +563,7 @@
 			<min>-1.0</min>
 		</input>
 	</gauge>
-
+-->
 	<gauge>
 		<name>Elevator Trim</name>
 		<x>-95</x>
@@ -582,8 +583,8 @@
 			<min>-1.0</min>
 		</input>
 	</gauge>
-
-<!--<dial>
+<!--
+<dial>
    <name>Wind Direction</name>
    <x>0</x>
    <y>-100</y> 
@@ -601,7 +602,7 @@
   <radius>30</radius>
   <divisions>30</divisions>
 </dial>-->
-
+<!--
  <label>
   <name>Wind Direction</name>
   <width>25</width>
@@ -705,5 +706,5 @@
 			<property>/controls/flight/elevator-trim</property>
 		</input>
 	</gauge>
-
+-->
 </PropertyList>

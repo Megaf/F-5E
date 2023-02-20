@@ -5,7 +5,7 @@ kids 1
 OBJECT poly
 name "block"
 loc -3.18791 0.268196 -0.220756
-texture "Aircraft/F-5E/Models/panel.png"
+texture "C:/Program Files/FlightGear/data/Aircraft/F-5E/Models/panel.png"
 crease 45.000000
 numvert 50
 0 0.53097 0.101215

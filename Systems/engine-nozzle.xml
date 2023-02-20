@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PropertyList>
+
+ <filter>
+  <name>Engine 1 Nozzle Area</name>
+  <debug>false</debug>
+  <type>gain</type>
+  <input>
+	<value>180.0</value>
+  </input>
+  <reference>
+   	<property>engines/engine[0]/n1</property>
+	<scale>1.4</scale>
+        <max>179.0</max>
+  </reference>
+  <output>
+   <property>engines/engine[0]/nozzle-pos-norm</property>
+  </output>
+  <gain>
+   <expression>
+    <table>
+     <property>engines/engine[0]/augmentation</property>
+     <entry><ind>0</ind><dep>0.01</dep></entry>
+     <entry><ind>1</ind><dep>1.0</dep></entry>
+    </table>
+   </expression>
+  </gain>
+  <u_min>0.0</u_min>
+  <u_max>1.0</u_max>
+ </filter>
+
+ <filter>
+  <name>Engine 2 Nozzle Area</name>
+  <debug>false</debug>
+  <type>gain</type>
+  <input>
+	<value>180.0</value>
+  </input>
+  <reference>
+   	<property>engines/engine[1]/n1</property>
+	<scale>1.4</scale>
+        <max>179.0</max>
+  </reference>
+  <output>
+   <property>engines/engine[1]/nozzle-pos-norm</property>
+  </output>
+  <gain>
+   <expression>
+    <table>
+     <property>engines/engine[1]/augmentation</property>
+     <entry><ind>0</ind><dep>0.01</dep></entry>
+     <entry><ind>1</ind><dep>1.0</dep></entry>
+    </table>
+   </expression>
+  </gain>
+  <u_min>0.0</u_min>
+  <u_max>1.0</u_max>
+ </filter>
+</PropertyList>
+

@@ -1,0 +1,195 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <name>ASI</name>
+ <path>asi.ac</path>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>ASI_face</object-name>
+  <object-name>ASI_mach-scale</object-name>
+  <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+  <interpolation>
+   <entry><ind>0</ind><dep>0</dep></entry>
+   <entry><ind>50</ind><dep>21</dep></entry>
+   <entry><ind>100</ind><dep>56</dep></entry>
+   <entry><ind>150</ind><dep>91.5</dep></entry>
+   <entry><ind>200</ind><dep>127</dep></entry>
+   <entry><ind>300</ind><dep>180</dep></entry>
+   <entry><ind>400</ind><dep>212</dep></entry>
+   <entry><ind>450</ind><dep>226</dep></entry>
+   <entry><ind>500</ind><dep>242</dep></entry>
+   <entry><ind>600</ind><dep>272</dep></entry>
+   <entry><ind>700</ind><dep>291</dep></entry>
+   <entry><ind>800</ind><dep>306</dep></entry>
+   <entry><ind>900</ind><dep>322</dep></entry>
+   <entry><ind>1000</ind><dep>338</dep></entry>
+  </interpolation>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>ASI_mach-scale</object-name>
+  <property>/velocities/mach</property>
+  <interpolation>
+   <entry><ind>0.0</ind><dep>0</dep></entry>
+   <entry><ind>0.3</ind><dep>0</dep></entry>
+   <entry><ind>0.4</ind><dep>45</dep></entry>
+   <entry><ind>0.6</ind><dep>67</dep></entry>
+   <entry><ind>0.8</ind><dep>90</dep></entry>
+   <entry><ind>1.0</ind><dep>113</dep></entry>
+   <entry><ind>1.1</ind><dep>135</dep></entry>
+   <entry><ind>1.2</ind><dep>155</dep></entry>
+   <entry><ind>1.3</ind><dep>167</dep></entry>
+   <entry><ind>1.4</ind><dep>179</dep></entry>
+   <entry><ind>1.6</ind><dep>202</dep></entry>
+   <entry><ind>1.8</ind><dep>224</dep></entry>
+   <entry><ind>2.0</ind><dep>246</dep></entry>
+   <entry><ind>2.2</ind><dep>269</dep></entry>
+   <entry><ind>2.4</ind><dep>290</dep></entry>
+  </interpolation>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>bg</object-name>
+  <property>autopilot/settings/target-speed-kt</property>
+  <interpolation>
+   <entry><ind>0</ind><dep>0</dep></entry>
+   <entry><ind>50</ind><dep>21</dep></entry>
+   <entry><ind>100</ind><dep>56</dep></entry>
+   <entry><ind>150</ind><dep>91.5</dep></entry>
+   <entry><ind>200</ind><dep>127</dep></entry>
+   <entry><ind>300</ind><dep>180</dep></entry>
+   <entry><ind>400</ind><dep>212</dep></entry>
+   <entry><ind>450</ind><dep>226</dep></entry>
+   <entry><ind>500</ind><dep>242</dep></entry>
+   <entry><ind>600</ind><dep>272</dep></entry>
+   <entry><ind>700</ind><dep>291</dep></entry>
+   <entry><ind>800</ind><dep>306</dep></entry>
+   <entry><ind>900</ind><dep>322</dep></entry>
+   <entry><ind>1000</ind><dep>338</dep></entry>
+  </interpolation>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+
+	<animation>
+		<type>select</type>
+		<object-name>off-ind</object-name>
+		<condition>
+			<less-than>
+				<property>systems/electrical/volts</property>
+				<value>24</value>
+			</less-than>
+		</condition>
+	</animation>
+
+ <!-- Lightning -->
+
+ <animation>
+  <object-name>ASI_mount</object-name>
+  <object-name>ASI_knob</object-name>
+  <type>material</type>
+  <emission>
+   <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+   <red>0.5</red>
+   <green>0.2</green>
+   <blue>0.2</blue>
+  </emission>
+ </animation>
+
+ <animation>
+  <object-name>ASI_face</object-name>
+  <object-name>ASI_mach-scale</object-name>
+  <object-name>ASI_bkg</object-name>
+  <object-name>ASI_bkg2</object-name>
+  <object-name>off-ind</object-name>
+  <object-name>bg</object-name>
+  <type>material</type>
+ <emission>
+      <red>   0.028 </red>
+      <green> 0.014 </green>
+      <blue>  0.007 </blue>
+      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+    </emission>
+ </animation>
+
+
+    <animation>
+        <type>pick</type>
+        <object-name>ASI_knob</object-name>
+        <action>
+            <button>3</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>autopilot/settings/target-speed-kt</property>
+                <step>-10</step>
+                <min>0</min>
+                <max>1000</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>ASI_knob</object-name>
+        <action>
+            <button>4</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>autopilot/settings/target-speed-kt</property>
+                <step>10</step>
+                <min>0</min>
+                <max>1000</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>ASI_knob</object-name>
+        <property>autopilot/settings/target-speed-kt</property>
+        <interpolation>
+            <entry><ind>0</ind><dep>0</dep></entry>
+            <entry><ind>1000</ind><dep>1000</dep></entry>
+        </interpolation>
+        <center>
+            <x-m>0.012</x-m>
+            <y-m>-0.036</y-m>
+            <z-m>-0.037</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+
+ <animation>
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>10</max-m>
+ </animation>
+
+</PropertyList>

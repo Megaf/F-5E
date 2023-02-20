@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<sim>
+    <model>
+	        <livery>
+	            <name type="string">TAC Air Contract Air Support</name>
+	            <texture>Liveries/TACAir/tacair-fuselage.png</texture>
+	        </livery>
+			<wings>
+				<name type="string">Tacair</name>
+				<texture>Liveries/TACAir/tacair-wings.png</texture>
+			</wings>        
+			<cabine>
+				<name type="string">Tacair</name>
+				<texture>turbine.png</texture>
+			</cabine>    
+			<fueltk>
+				<name type="string">Tacair</name>
+				<texture>Liveries/TACAir/tacair-fueltank.png</texture>
+			</fueltk> 
+	</model>
+	<rendering>
+    <refl_correction type="string">-0.47</refl_correction>
+    </rendering>
+</sim>
+</PropertyList>

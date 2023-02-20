@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+
+<PropertyList>
+
+ <path>lamp.ac</path>
+ 
+<animation>
+      <type>material</type>
+    <object-name>alt1.coolfail.lam.004</object-name>
+	 <object-name>alt1.coolfail.lamplen</object-name>
+    <condition>
+     
+        <equals>
+            <property>gear/gear[1]/position-norm</property>
+            <value>1</value>
+        </equals>
+	
+	
+    </condition>
+	
+	 <emission>
+      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+      <red>   0.030 </red>
+      <green> 1 </green>
+      <blue>  0.005 </blue>
+     
+    </emission>
+  </animation>
+
+</PropertyList>

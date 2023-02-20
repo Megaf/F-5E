@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<sim>
+    <model>
+	        <livery>
+	            <name type="string">Swiss AF, FS.8 Peace Alps</name>
+	            <texture>Liveries/SwAFFL8PA/SwAFFL8PA-fuselage.png</texture>
+	        </livery>
+			<wings>
+				<name type="string">SwAFFL8PA</name>
+				<texture>Liveries/SwAFFL8PA/SwAFFL8PA-wings.png</texture>
+			</wings>        
+			<cabine>
+				<name type="string">Pampa</name>
+				<texture>turbine.png</texture>
+			</cabine>    
+			<fueltk>
+				<name type="string">SwAFFL8PA</name>
+				<texture>Liveries/SwAFFL8PA/SwAFFL8PA-fueltank.png</texture>
+			</fueltk> 
+	</model>
+	<rendering>
+    <refl_correction type="string">-0.47</refl_correction>
+    </rendering>
+</sim>
+</PropertyList>

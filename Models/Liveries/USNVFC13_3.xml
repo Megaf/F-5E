@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<sim>
+    <model>
+	        <livery>
+	            <name type="string">US Navy VFC-13 #3</name>
+	            <texture>Liveries/USNVFC13_3/USNVFC13_3-fuselage.png</texture>
+	        </livery>
+			<wings>
+				<name type="string">USNVFC13_3</name>
+				<texture>Liveries/USNVFC13_3/USNVFC13_3-wings.png</texture>
+			</wings>        
+			<cabine>
+				<name type="string">USNVFC13_3</name>
+				<texture>turbine.png</texture>
+			</cabine>    
+			<fueltk>
+				<name type="string">USNVFC13_3</name>
+				<texture>Liveries/USNVFC13_3/USNVFC13_3-fueltank.png</texture>
+			</fueltk> 
+	</model>
+	<rendering>
+    <refl_correction type="string">-0.47</refl_correction>
+    </rendering>
+</sim>
+</PropertyList>

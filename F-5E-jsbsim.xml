@@ -71,7 +71,71 @@
             <x> 340 </x>
             <y> 0 </y>
             <z> 0 </z>
-        </location>
+    	</location>
+
+   	<pointmass name="pylon1.L"><!-- left wingtip rail pointmass 0 -->
+      	  <weight unit="LBS"> 0 </weight>
+      	  <location name="POINTMASS" unit="IN">
+            <x>  350 </x>
+            <y> -166 </y>
+            <z>   -0 </z>
+      	  </location>
+	</pointmass>
+
+     	<pointmass name="pylon2.L"><!-- left wing outboard pylon pointmass 1 -->
+      	  <weight unit="LBS"> 0 </weight>
+      	  <location name="POINTMASS" unit="IN">
+            <x>  320 </x>
+            <y> -128 </y>
+            <z>  -20 </z>
+          </location>
+        </pointmass>
+
+   	<pointmass name="pylon3.L"><!-- left wing inboard pylon pointmass 2 -->
+      	  <weight unit="LBS"> 0 </weight>
+          <location name="POINTMASS" unit="IN">
+            <x>  331 </x>
+            <y> -100 </y>
+            <z>  -26 </z>
+      	  </location>
+   	</pointmass>
+
+   	<pointmass name="pylon.C"><!-- empty centerline fuel tank pointmass 3 -->
+      	  <weight unit="LBS"> 0 </weight>
+      	  <location name="POINTMASS" unit="IN">
+            <x>  272 </x>
+            <y>    0 </y>
+            <z>  -31 </z>
+      	  </location>
+   	</pointmass>
+
+   	<pointmass name="pylon3.R"><!-- right wing inboard pylon pointmass 4 -->
+      	  <weight unit="LBS"> 0 </weight>
+      	  <location name="POINTMASS" unit="IN">
+            <x>  320 </x>
+            <y>  100 </y>
+            <z>  -26 </z>
+      	  </location>
+   	</pointmass>
+
+   	<pointmass name="pylon2.R"><!-- right wing outboard pylon pointmass 5 -->
+      	  <weight unit="LBS"> 0 </weight>
+      	  <location name="POINTMASS" unit="IN">
+            <x>  331 </x>
+            <y>  128 </y>
+            <z>  -20 </z>
+      	  </location>
+   	</pointmass>
+
+   	<pointmass name="pylon1.R"><!-- right wingtip rail pointmass 6 -->
+      	  <weight unit="LBS"> 0 </weight>
+      	  <location name="POINTMASS" unit="IN">
+            <x>  350 </x>
+            <y>  166 </y>
+            <z>   -0 </z>
+      	  </location>
+	</pointmass>
+
     </mass_balance>
 
     <ground_reactions>
@@ -173,6 +237,9 @@
             <feed>0</feed>
             <feed>1</feed>
             <feed>2</feed>
+            <feed>3</feed>
+            <feed>4</feed>
+            <feed>5</feed>
             <thruster file="direct">
                 <location unit="IN">
                     <x> 551 </x>
@@ -195,6 +262,9 @@
             <feed>0</feed>
             <feed>1</feed>
             <feed>2</feed>
+            <feed>3</feed>
+            <feed>4</feed>
+            <feed>5</feed>
             <thruster file="direct">
                 <location unit="IN">
                     <x> 551 </x>
@@ -246,6 +316,33 @@
             <capacity unit="LBS"> 1093.19 </capacity>
             <contents unit="LBS"> 1000.00 </contents>
         </tank>
+        <tank type="FUEL">    <!-- Tank Number 3 - Centreline Droptank max 275 gal-->
+            <location unit="IN">
+                <x> 270 </x>
+                <y>   0 </y>
+		<z> -31 </z>
+            </location>
+            <capacity unit="LBS"> 1867.5 </capacity>
+            <contents unit="LBS"> 1850.00 </contents>
+        </tank>
+        <tank type="FUEL">    <!-- Tank Number 4 - Left Droptank max 275 gal-->
+            <location unit="IN">
+                <x> 331 </x>
+		<y>-100 </y>
+                <z>-26  </z>
+            </location>
+            <capacity unit="LBS"> 1867.5 </capacity>
+            <contents unit="LBS"> 1850.00 </contents>
+        </tank>
+	<tank type="FUEL">    <!-- Tank Number 5 - Right Droptank max 275 gal-->
+            <location unit="IN">
+                <x> 331 </x>
+                <y> 100 </y>
+		<z>-26  </z>
+            </location>
+            <capacity unit="LBS"> 1867.5 </capacity>
+            <contents unit="LBS"> 1850.00 </contents>
+        </tank>
     </propulsion>
 
  <system file="gear"/> 
@@ -256,10 +353,10 @@
  <system file="FCS-yaw"/>
  <system file="NWS"/>
  <system file="alpha_buffet"/>
- <system file="armament"/>
+ <!--system file="armament"/-->
  <system file="crash-detect"/>
- <system file="beacon"/>
- <system file="beacon2"/>
+ <!--system file="beacon"/>
+ <system file="beacon2"/-->
  <system file="strobe"/>
  <system file="particles"/>
  <system file="hook"/>
@@ -267,6 +364,7 @@
  <system file="autoslats"/>
  <system file="canopy"/>
  <system file="chute"/>
+ <system file="fcs-property-copy"/>
 
 
     <flight_control name="FCS: F5E-FCS">
@@ -352,11 +450,26 @@
                   <value>1.0</value>
                       <table>
                           <independentVar>velocities/mach</independentVar>
-                          <tableData>
-                              0.0000	0.0000
-                              0.8200	0.0000
-                              1.1000	0.0200
-                              1.8000	0.0110
+			  <tableData>
+				  <!--transcribed from F-5E case study, page 32>
+				  and page 40 -->
+				  0.0000	0.0000
+				  0.4000	0.0000
+				  0.6000	0.0005	  
+				  0.7000	0.0010
+				  0.8000	0.0005
+				  0.9000	0.0000
+				  0.9500	0.0030
+				  1.0000	0.0150
+				  1.1000	0.0200
+				  1.1500	0.0220
+				  1.2000	0.0230
+				  1.3000	0.0250
+				  1.4000	0.0260
+				  1.5000	0.0270
+				  1.6000	0.0280
+				  1.7000	0.0270
+				  1.8000	0.0260
                           </tableData>
                       </table>
                 </product>

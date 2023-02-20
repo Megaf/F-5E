@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<sim>
+    <model>
+	        <livery>
+	            <name type="string">US Navy VFC-111 #2</name>
+	            <texture>Liveries/USNVFC111_2/USNVFC111_2-fuselage.png</texture>
+	        </livery>
+			<wings>
+				<name type="string">USNVFC111_2</name>
+				<texture>Liveries/USNVFC111_2/USNVFC111_2-wings.png</texture>
+			</wings>        
+			<cabine>
+				<name type="string">Pampa</name>
+				<texture>turbine.png</texture>
+			</cabine>    
+			<fueltk>
+				<name type="string">USNVFC111_2</name>
+				<texture>Liveries/USNVFC111_2/USNVFC111_2-fueltank.png</texture>
+			</fueltk> 
+	</model>
+	<rendering>
+    <refl_correction type="string">-0.47</refl_correction>
+    </rendering>
+</sim>
+</PropertyList>

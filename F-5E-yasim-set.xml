@@ -10,9 +10,10 @@ David Culp,  davidculp2@comcast.net
 
 	<sim>
 
-		<description>Northrop F-5E Tiger II ( YASIM ) </description>
-		<author>David Culp (FDM, 3D) / Isaias Prestes (Cockpit), StuartC </author>
-		<status>V0.4</status>
+		<description>Northrop F-5E Tiger II ( YASim ) </description>
+		<author>David Culp (FDM, 3D) / Isaias Prestes (Cockpit), StuartC, Enrogue (Updates), Timi (Sounds), Gary Brown (Liveries) </author>
+		<status>beta</status>
+		<aircraft-version>1.0</aircraft-version>
 
 		<flight-model>yasim</flight-model>
 		<aero>F5-yasim</aero>
@@ -20,6 +21,50 @@ David Culp,  davidculp2@comcast.net
 		<startup>
 			<splash-texture>Aircraft/F-5E/splash.png</splash-texture>
 		</startup>
+
+		<rating>
+			<FDM type="int">2</FDM>
+			<systems type="int">1</systems>
+			<cockpit type="int">3</cockpit>
+			<model type="int">5</model>
+		</rating>
+
+		<tags>
+			<tag>fighter</tag>
+			<tag>1950s</tag>
+			<tag>1960s</tag>
+			<tag>1970s</tag>
+			<tag>coldwar</tag>
+			<tag>supersonic</tag>
+			<tag>jet</tag>
+			<tag>2-engine</tag>
+			<tag>afterburner</tag>
+			<tag>northrop</tag>
+		</tags>
+
+                <previews>
+                        <preview>
+                                <type>exterior</type>
+                                <splash type="bool">true</splash>
+                                <path>Previews/f-5e-preview-1.jpg</path>
+                        </preview>
+                        <preview>
+                                <type>exterior</type>
+                                <splash type="bool">true</splash>
+                                <path>Previews/f-5e-preview-2.jpg</path>
+                        </preview>
+                        <preview>
+                                <type>exterior</type>
+                                <splash type="bool">true</splash>
+                                <path>Previews/f-5e-preview-3.jpg</path>
+                        </preview>
+                        <preview>
+                                <type>exterior</type>
+                                <splash type="bool">true</splash>
+                                <path>Previews/f-5e-preview-4.jpg</path>
+                        </preview>
+                </previews>
+
 
 		<submodels>
 			<serviceable type="bool">true</serviceable>
@@ -39,54 +84,78 @@ David Culp,  davidculp2@comcast.net
 		</panel>
 
 
-	<systems>
+		<systems>
 			<autopilot>
 				<path>Aircraft/F-5E/Systems/autopilot5.xml</path>
 			</autopilot>
-			<autoslats>
-				<path>Aircraft/F-5E/Systems/autoslats.xml</path>
-			</autoslats>
+			<autopilot n="101">
+        			<path>Aircraft/F-5E/Systems/glass-rain.xml</path>
+      			</autopilot>
+			<autopilot n="102">
+				<path>Aircraft/F-5E/Systems/f5-autoflaps.xml</path>
+			</autopilot>
+			<property-rule n="100">
+                        	<name>Engine Nozzle</name>
+     				<path>Aircraft/F-5E/Systems/engine-nozzle.xml</path>
+			</property-rule>
 		</systems>
 
 		<multiplay>
-      <chat_display>1</chat_display>
-      <generic> 
-         <!--><int n="0" alias="/sim/crashed" /><-->
-		 
-		  
-        <!-- Nav lights on -->
-      <int n="0" alias="/controls/lighting/whiteSwitch" />
-	   <int n="0" alias="/controls/lighting/navSwitch" />
-      <!-- Beacon on -->
-      <int n="1" alias="/controls/lighting/beaconSwitch" />
-	   <!-- Strobe on -->
-      <int n="1" alias="/controls/lighting/strobeSwitch" />
-      <!-- Landing lights on -->
-      <int n="2" alias="/controls/lighting/landingSwitch" />
-	    <!-- Taxi light on -->
-      <int n="3" alias="/controls/lighting/taxiSwitch" />
-	  
-	  <!-- Engine Status -->
-	  
-	  <int n="5" alias="/engines/engine[0]/state" />
-	  <int n="6" alias="/engines/engine[1]/state" />
-	  <int n="7" alias="/sim/crashed" />
-	  
-        
-        <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
-        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/> 
-		<float n="2" alias="/surface-positions/left-flap-pos-norm"/>
-		<float n="3" alias="/surface-positions/right-flap-pos-norm"/>
-		<float n="4" alias="/sim/model/nozzle-animation"/>
-		<float n="8" alias="/engines/engine[0]/afterburner" /> <!-- Reheat Left Engine -->
-	    <float n="9" alias="/engines/engine[1]/afterburner" /> <!-- Reheat Right Engine -->
-			
-      </generic>
-    </multiplay>
+		<chat_display>1</chat_display>
+			<generic> 
+			<int n="0" alias="/controls/lighting/white-light-switch" />
+			<!-- Beacon on -->
+			<int n="1" alias="/controls/lighting/beacon-switch" />
+			<!-- Landing lights on -->
+			<int n="2" alias="/controls/lighting/landing-lights-switch" />
+			<!-- Taxi light on -->
+			<int n="3" alias="/controls/lighting/taxi-light" />
+			<!-- Nav lights on -->
+			<int n="4" alias="/controls/lighting/nav-lights-switch" />
+			<!-- Engine Status -->
+			<int n="5" alias="/engines/engine[0]/state" />
+			<int n="6" alias="/engines/engine[1]/state" />
+			<int n="7" alias="/sim/crashed" />
+			<float n="0" alias="/instrumentation/doors/crew/position-norm"/>
+			<float n="1" alias="/surface-positions/slat-pos-norm"/> 
+			<float n="2" alias="/surface-positions/left-flap-pos-norm"/>
+			<float n="3" alias="/surface-positions/right-flap-pos-norm"/>
+			<float n="4" alias="/velocities/airspeed-kt"/>
+			<float n="6" alias="/environment/relative-humidity"/>
+			<float n="7" alias="/position/altitude-agl-ft"/>
+			<float n="8" alias="/engines/engine[0]/augmentation" /> <!-- Reheat Left Engine -->
+		        <float n="9" alias="/engines/engine[1]/augmentation" /> <!-- Reheat Right Engine -->
+			<float n="10" alias="/engines/engine/egt-degf" /> 
+			<float n="11" alias="/engines/engine[1]/egt-degf" />
+			<float n="12" alias="/controls/state/low_level" />
+			<float n="13" alias="/orientation/alpha-deg" /> <!-- 9 changed to 13-->
+			<float n="14" alias="/position/altitude-ft" /> 
+			<float n="15" alias="/environment/temperature-degc" /> <!--8 changed to 15 -->
+			<float n="16" alias="/velocities/mach" />
+			<float n="18" alias="/engines/engine[0]/nozzle-pos-norm" /> <!-- Nozzle Left Engine -->
+			<float n="19" alias="/engines/engine[1]/nozzle-pos-norm" /> <!-- Nozzle Right Engine -->
+                        <float n="20" alias="/smoke/red" />
+                        <float n="21" alias="/smoke/green" />
+                        <float n="22" alias="/smoke/blue" />
+                        <float n="23" alias="/smoke/particlepersec" />
+			<!-- stores over MP -->
+			<string alias="/sim/weight[0]/selected" n="0"/>
+			<string alias="/sim/weight[1]/selected" n="1"/>
+			<string alias="/sim/weight[2]/selected" n="2"/>
+			<string alias="/sim/weight[3]/selected" n="3"/>
+			<string alias="/sim/weight[4]/selected" n="4"/>
+			<string alias="/sim/weight[5]/selected" n="5"/>
+			<string alias="/sim/weight[6]/selected" n="6"/>
+			<string alias="/sim/aero" n="7"/>
+			<bool alias="/sim/rendering/display-pylons" n="0"/>
+			<bool alias="/systems/refuel/serviceable" n="1"/>
+			<bool alias="/smoke/active" n="2"/>
+			</generic>
+		</multiplay>
 
 		<!-- Head-up display settings -->
 		<hud>
-			<path>Aircraft/F-5E/Models/Instruments/Hud/default.xml</path>
+		<path>Aircraft/F-5E/Models/Instruments/Hud/default.xml</path>
 			<path>Aircraft/F-5E/Models/Instruments/Hud/NTPS.xml</path>
 			<visibility type="bool">false</visibility>
 			<visibility type="bool">true</visibility>
@@ -106,8 +175,9 @@ David Culp,  davidculp2@comcast.net
 				<!-- x/y/z == (esquerda, direita)/(cima, baixo)/(frente, tras) -->
 				<pitch-offset-deg>-5.0</pitch-offset-deg>
 				<x-offset-m archive="y">-0.0005208333333</x-offset-m>
-				<y-offset-m archive="y">0.9525</y-offset-m>
+				<y-offset-m archive="y">0.93</y-offset-m>
 				<z-offset-m archive="y">-2.6708333333</z-offset-m>
+				 <default-field-of-view-deg>110</default-field-of-view-deg>
 			</config>
 		</view>
 		
@@ -296,6 +366,10 @@ David Culp,  davidculp2@comcast.net
 
 		</model>
 
+		<rendering>
+			<refl_correction type="string">-0.47</refl_correction>
+			<display-pylons type="bool">true</display-pylons>
+		</rendering>
 
 		<flaps>
 			<setting>0.000</setting>
@@ -371,7 +445,27 @@ David Culp,  davidculp2@comcast.net
 				<name>q</name>
 				<desc>Toggles Radar Standby Mode</desc>
 			</key>
- 
+			<key>
+				<name>ctrl-l</name>
+				<desc>Toggles Limits Display</desc>
+			</key>
+			<key>
+				<name>1 </name>
+				<desc>Smoke decrease</desc>
+			</key>
+			<key>
+				<name>2 </name>
+				<desc>Smoke Increase</desc>
+			</key>
+			<key>
+				<name>3 </name>
+				<desc>Change smoke Color</desc>
+			</key>
+			<key>
+				<name>0 </name>
+				<desc>Toggle Smoke</desc>
+			</key>
+
 		</help>
 
 		<!-- Entradas para o menu de apoio para controle da aeronave -->
@@ -387,93 +481,98 @@ David Culp,  davidculp2@comcast.net
 							<script>aircraft.livery.dialog.open()</script>
 						</binding>
 					</item>
-
-				 <item n="2">
-        <label>Reload Gun</label>
-        <binding>
-          <command>nasal</command>
-          <script>guns.reload_Cannon()</script>
-        </binding>
-      </item>
-	
-  <item n="3">
-        <label>No load</label>
-        <binding>
-          <command>nasal</command>
-          <script>load.Clean()</script>
-        </binding>
-      </item>
-      <item n="4">
-        <label>CAP</label>
-        <binding>
-          <command>nasal</command>
-          <script>load.CAP()</script>
-        </binding>
-      </item>
-      <item n="5">
-        <label>CAP Extended loiter</label>
-        <binding>
-          <command>nasal</command>
-          <script>load.CAPextended()</script>
-        </binding>
-      </item>
-	  
-	   <item n="6">
-        <label>Bomb Run</label>
-        <binding>
-          <command>nasal</command>
-          <script>load.bombrun()</script>
-        </binding>
-      </item>
-	  
-	  <item n="7">
-        <label>Heavy Bomb Run</label>
-        <binding>
-          <command>nasal</command>
-          <script>load.bombrunheavy()</script>
-        </binding>
-      </item>
-	  
-	   <item n="8">
-        <label>Bomb Run - long Range</label>
-        <binding>
-          <command>nasal</command>
-          <script>load.bombrunlong()</script>
-        </binding>
-      </item>
-	  
-	   <item n="9">
-        <label>Ground Attack</label>
-        <binding>
-          <command>nasal</command>
-          <script>load.GAmulti()</script>
-        </binding>
-      </item>
-	  
-	   <item n="10">
-        <label>Ground Attack extrended range</label>
-        <binding>
-          <command>nasal</command>
-          <script>load.GAmultiextended()</script>
-        </binding>
-      </item>
-	  
-      <item n="11">
-        <label>Ferry configuration</label>
-        <binding>
-          <command>nasal</command>
-          <script>load.Ferry()</script>
-        </binding>
-      </item>
-     
-      <item n="1">
-        <label>Target Tracking</label>
-        <name>track_target</name>
-        <binding>
-           <command>dialog-show</command>
-           <dialog-name>track_target</dialog-name>
-        </binding>
-      </item> 
+				 	<item n="2">
+        					<label>Reload Gun</label>
+        					<binding>
+          						<command>nasal</command>
+          						<script>guns.reload_Cannon()</script>
+        					</binding>
+      					</item>
+  					<item n="3">
+        					<label>No load</label>
+        					<binding>
+          						<command>nasal</command>
+          						<script>load.Clean()</script>
+        					</binding>
+      					</item>
+      					<item n="4">
+        					<label>CAP</label>
+        					<binding>
+          						<command>nasal</command>
+        						<script>load.CAP()</script>
+        					</binding>
+      					</item>
+      					<item n="5">
+        					<label>CAP Extended loiter</label>
+        					<binding>
+          						<command>nasal</command>
+          						<script>load.CAPextended()</script>
+        					</binding>
+      					</item>
+	   				<item n="6">
+        					<label>Bomb Run</label>
+        					<binding>
+          						<command>nasal</command>
+          						<script>load.bombrun()</script>
+        					</binding>
+      					</item>
+	  				<item n="7">
+        					<label>Heavy Bomb Run</label>
+        					<binding>
+          						<command>nasal</command>
+          						<script>load.bombrunheavy()</script>
+        					</binding>
+      					</item>
+	   				<item n="8">
+        					<label>Bomb Run - long Range</label>
+        					<binding>
+          						<command>nasal</command>
+          						<script>load.bombrunlong()</script>
+        					</binding>
+      					</item>
+	   				<item n="9">
+        					<label>Ground Attack</label>
+        					<binding>
+          						<command>nasal</command>
+          						<script>load.GAmulti()</script>
+        					</binding>
+      					</item>
+	   				<item n="10">
+        					<label>Ground Attack extrended range</label>
+        					<binding>
+          						<command>nasal</command>
+          						<script>load.GAmultiextended()</script>
+        					</binding>
+      					</item>
+      					<item n="11">
+        					<label>Ferry configuration</label>
+        					<binding>
+          						<command>nasal</command>
+          						<script>load.Ferry()</script>
+        					</binding>
+      					</item>
+      					<item n="1">
+        					<label>Target Tracking</label>
+        					<name>track_target</name>
+        					<binding>
+           						<command>dialog-show</command>
+           						<dialog-name>track_target</dialog-name>
+        					</binding>
+					</item> 
+                                        <item n="12">
+                                                <label>Clean (no pylons)</label>
+                                                <binding>
+                                                        <command>nasal</command>
+                                                        <script>load.noPylons()</script>
+                                                </binding>
+                                        </item>
+                                        <item n="13">
+                                                <label>Toggle AAR Probe</label>
+						<binding>
+		                                        <command>property-toggle</command>
+							<property>systems/refuel/serviceable</property>
+                                                </binding>
+                                        </item>
 				</menu>
 			</default>
 		</menubar>
@@ -678,12 +777,20 @@ David Culp,  davidculp2@comcast.net
 
 	</sim>
 	<!-- END OF SIM -->
+	
+	<environment>
+    <turbulence>
+      <use-cloud-turbulence>true</use-cloud-turbulence>
+    </turbulence>
+  </environment>
 
-	<systems>
-		<refuel>
-			<type>probe</type>
-		</refuel>
-	</systems>
+<systems>
+<refuel>
+<type>probe</type>
+<serviceable type="bool">true</serviceable>
+</refuel>
+    </systems>
+ 
 
 	<consumables>
 		<fuel>
@@ -733,6 +840,10 @@ David Culp,  davidculp2@comcast.net
 			<instrument-lights type="bool">false</instrument-lights>
 		</lighting>
 		
+		<switches>
+            
+            <master-avionics type="bool">true</master-avionics>
+        </switches>
 		
 
 		<armament>
@@ -777,11 +888,7 @@ David Culp,  davidculp2@comcast.net
   </engine>
  </engines>
  
- <environment>
-    <turbulence>
-      <use-cloud-turbulence>true</use-cloud-turbulence>
-    </turbulence>
-  </environment>
+
 
 	<!-- custom keyboard -->
 	<input>
@@ -806,7 +913,16 @@ David Culp,  davidculp2@comcast.net
 				</binding>
 			</key>
 			
-			
+		 <key n="56">
+        <name>8</name>
+     <desc>Toggle Hud ILS</desc>
+     <binding>
+      <command>property-toggle</command>
+      <property>controls/switches/hudils</property>
+      <value type="bool">true</value>
+     </binding>
+   
+    </key>	
 			
 
 			<key n="79">
@@ -918,12 +1034,51 @@ David Culp,  davidculp2@comcast.net
     </binding>
   </key>
 
+                        <key n="12">
+                                <name>ctrl-l</name>
+                                <desc>Toggle display limit messages</desc>
+                                <binding>
+                                        <command>property-toggle</command>
+                                        <property>limits/display</property>
+                                </binding>
+			</key>
+			<key n="48">
+				<name>0</name>
+				<desc>Toggle smoke</desc>
+				<binding>
+					<command>nasal</command>
+					<script>f5e.SmokeToggle()</script>
+				</binding>
+			</key>
+			<!-- Modify smoke particle per second -->
+			<key n="49">
+				<name>1</name>
+				<desc>Decrease smoke</desc>
+				<binding>
+					<command>nasal</command>
+					<script>f5e.SmokeCounter(-1)</script>
+				</binding>
+			</key>
+			<key n="50">
+				<name>2</name>
+				<desc>Increase smoke</desc>
+				<binding>
+					<command>nasal</command>
+					<script>f5e.SmokeCounter(1)</script>
+				</binding>
+			</key>
+			<!-- select smoke color (green,white,red) -->
+			<key n="51">
+				<name>3</name>
+				<desc>Select smoke color</desc>
+				<binding>
+					<command>nasal</command>
+					<script>f5e.SmokeColor()</script>
+				</binding>
+			</key>
 		</keyboard>
 	</input>
-
-
-
-		<instrumentation>
+	<instrumentation>
 
 		<marker-beacon>
 			<volume type="double" archive="y">0.0</volume>
@@ -931,7 +1086,7 @@ David Culp,  davidculp2@comcast.net
 		<rdmi-mode type="int">0</rdmi-mode>
 		<!-- 0=TAC, 1=VOR, 2=ADF -->
 
-		<!-- RADAR code test -->
+		<!-- RADAR code test 
 		<rwr>
       <display-lighting-intens type="double">0.4</display-lighting-intens>
       <symbology-lighting-intens type="double">1</symbology-lighting-intens>
@@ -944,7 +1099,7 @@ David Culp,  davidculp2@comcast.net
       <range-factor type="double" archive="n">0.001888</range-factor>
       <minimized type="bool" archive="y">false</minimized>
       <selected type="int">3</selected>
-      <!-- inicio en pruebas -->
+    
       <enabled type="bool">true</enabled>
       <az-field type="double">140</az-field>
       <range type="double">80</range>
@@ -968,73 +1123,84 @@ David Culp,  davidculp2@comcast.net
     </radar2>
 		<ecm>
 			<on-off type="bool">true</on-off>
-		</ecm>
+		</ecm>-->
+		
+		  <wxradar>
+                <switch type="string" archive="y">ON</switch>
+                <mode-control type="int" archive="y">1</mode-control>
+                <display-controls>
+                        <WX type="bool" archive="y">true</WX>
+                        <centre type="bool"  archive="y">true</centre>
+                        <data type="bool"  archive="y">false</data>
+                        <pos type="bool" archive="y">false</pos>
+                        <rotate type="bool" archive="y">true</rotate>
+                        <symbol type="bool" archive="y">true</symbol>
+                </display-controls>
+                <serviceable type="bool">true</serviceable>
+                <range type="int"  archive="y">40</range>
+                <mode type="string" archive="y">WX</mode>
+                <lightning type="bool"  archive="y">false</lightning>
+                <display-mode type="string"  archive="y">plan</display-mode>
+                <minimized type="bool" archive="y">false</minimized>
+            </wxradar>
 	</instrumentation>
-<nasal>
- <doors>
-      <file>Aircraft/F-5E/Nasal/doors.nas</file>
-    </doors>
-
+	<nasal>
+		<low>
+      			<file>Aircraft/F-5E/Nasal/low.nas</file>
+    		</low>
+ 		<doors>
+      			<file>Aircraft/F-5E/Nasal/doors.nas</file>
+    		</doors>
 		<f5e>
 			<file>Aircraft/F-5E/Nasal/f5e.nas</file>
-			
-		
 		</f5e>
-		
 		<lights>
-      <file>Aircraft/F-5E/Nasal/Lights.nas</file>
-    </lights>
-		
+      			<file>Aircraft/F-5E/Nasal/Lights.nas</file>
+    		</lights>
 		<F-5_fuel>
-   <file>Aircraft/F-5E/Nasal/fuel.nas</file>
-  </F-5_fuel>
-		
+   			<file>Aircraft/F-5E/Nasal/fuel.nas</file>
+		</F-5_fuel>
 		<livery>
 			<file>Aircraft/F-5E/Nasal/livery.nas</file>
 		</livery>
-		
-<radar>
-<file>Aircraft/F-5E/Nasal/radar.nas</file> 
-    </radar>
-<radar2>
-<file>Aircraft/F-5E/Nasal/radar2.nas</file>
-</radar2>
-<rwr>
- <file>Aircraft/F-5E/Models/Interior/Panel/Instruments/Radar/rwr.nas</file>
-</rwr> 
-
-<radardist>
-<file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
-</radardist>
-
-<limits>
+		<radar>
+			<file>Aircraft/F-5E/Nasal/radar.nas</file> 
+    		</radar>
+		<terrain>
+                	<file>Aircraft/F-5E/Nasal/terrain.nas</file>
+            	</terrain>	
+		<radar2>
+			<file>Aircraft/F-5E/Nasal/radar2.nas</file>
+		</radar2>
+		<rwr>
+ 			<file>Aircraft/Instruments-3d/rwr/rwr.nas</file>
+		</rwr> 
+		<radardist>
+			<file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
+		</radardist>
+		<limits>
 			<file>Aircraft/F-5E/Nasal/limits.nas</file>
 		</limits>
-
- <guns>
-      <file>Aircraft/F-5E/Nasal/weapons.nas</file>
-      <file>Aircraft/F-5E/Nasal/revi.nas</file>
-    </guns>
-	
-	
-	 <load>
-      <file>Aircraft/F-5E/Nasal/ext_stores.nas</file>
-    </load>
-
-<aar> 
-<file>Aircraft/Generic/aar.nas</file>
-</aar>
-
- <engines>
-   <file>Aircraft/F-5E/Nasal/generic-yasim-engine.nas</file>
-  </engines>
-  
-  <emu>
-   <file>Aircraft/F-5E/Nasal/emu.nas</file>
-  </emu>
+ 		<guns>
+      			<file>Aircraft/F-5E/Nasal/weapons.nas</file>
+      			<file>Aircraft/F-5E/Nasal/revi.nas</file>
+    		</guns>
+	 	<load>
+      			<file>Aircraft/F-5E/Nasal/ext_stores.nas</file>
+    		</load>
+		<aar> 
+			<file>Aircraft/Generic/aar.nas</file>
+		</aar>
+ 		<engines>
+   			<file>Aircraft/F-5E/Nasal/generic-yasim-engine.nas</file>
+  		</engines>
+  		<emu>
+   			<file>Aircraft/F-5E/Nasal/emu.nas</file>
+  		</emu>
 	</nasal>
 
 	<limits>
+		<display type="bool">true</display>
 		<max-flap-extension-speed>
 			<flaps>0.100</flaps>
 			<speed>941</speed>
@@ -1062,9 +1228,17 @@ David Culp,  davidculp2@comcast.net
 
 		<max-positive-g>7.33</max-positive-g>
 		<max-negative-g>-3.00</max-negative-g>
-
 	</limits>
 
+	<!-- smoke -->
+	<smoke>
+		<active type="int">0</active>
+		<particlepersec type="int">25</particlepersec>
+		<color>white</color>
+		<red type="float">1.0</red>
+		<green type="float">1.0</green>
+		<blue type="float">1.0</blue>
+	</smoke>
 
 </PropertyList>
 

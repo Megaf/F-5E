@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<sim>
+    <model>
+	        <livery>
+	            <name type="string">RoCAF 45 TFS</name>
+	            <texture>Liveries/RoCAF45TFS/RoCAF45TFS-fuselage.png</texture>
+	        </livery>
+			<wings>
+				<name type="string">RoCAF45TFS</name>
+				<texture>Liveries/RoCAF45TFS/RoCAF45TFS-wings.png</texture>
+			</wings>        
+			<cabine>
+				<name type="string">Pampa</name>
+				<texture>Pampa-turbine.png</texture>
+			</cabine>    
+			<fueltk>
+				<name type="string">RoCAF45TFS</name>
+				<texture>Liveries/RoCAF45TFS/RoCAF45TFS-fueltank.png</texture>
+			</fueltk> 
+	</model>
+	<rendering>
+    <refl_correction type="string">-0.47</refl_correction>
+    </rendering>
+</sim>
+</PropertyList>

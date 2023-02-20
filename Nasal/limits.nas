@@ -22,6 +22,7 @@ var checkFlaps = func(n) {
   if (flapsetting == 0)
     return;
 
+  var displayLimits = getprop("limits/display");
   var airspeed = getprop("velocities/airspeed-kt");
   var ltext = "";
 
@@ -48,7 +49,7 @@ var checkFlaps = func(n) {
       }
     }
 
-    if (ltext != "")
+    if (ltext != "" and displayLimits)
     {
       screen.log.write(ltext);
     }
@@ -60,10 +61,11 @@ var checkGear = func(n) {
   if (!n.getValue())
     return;
 
+  var displayLimits = getprop("limits/display");
   var airspeed = getprop("velocities/airspeed-kt");
   var max_gear = getprop("limits/max-gear-extension-speed");
 
-  if ((max_gear != nil) and (airspeed > max_gear))
+  if ((max_gear != nil) and (airspeed > max_gear) and displayLimits)
   {
     screen.log.write("Gear extended above maximum extension speed!");
   }
@@ -94,6 +96,7 @@ var checkGandVNE = func {
   if (getprop("/sim/freeze/replay-state"))
     return;
 
+  var displayLimits = getprop("limits/display");
   var max_positive = getprop("limits/max-positive-g");
   var max_negative = getprop("limits/max-negative-g");
   var msg = "";
@@ -120,7 +123,7 @@ var checkGandVNE = func {
     msg = "Airspeed exceeds Vne!";
   }
 
-  if (msg != "")
+  if (msg != "" and displayLimits)
   {
     # If we have a message, display it, but don't bother checking for
     # any other errors for 10 seconds. Otherwise we're likely to get

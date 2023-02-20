@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<path>mirrors.ac</path>
+
+<!-- ALS  mirror reflecton -->
+
+ <effect>
+    <inherits-from>Aircraft/Jaguar/Models/effects/mirror/mirror</inherits-from>
+  
+	 <object-name>retro.001</object-name>
+	 <object-name>retro.002</object-name>
+  </effect>
+
+
+
+</PropertyList>

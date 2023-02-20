@@ -2,6 +2,21 @@
 <PropertyList>
 
  <path>attitude.ac</path>
+ 
+  <animation>
+  <type>material</type>
+ <object-name>ball</object-name>
+  <object-name>rollarrows</object-name>
+   <object-name>MiddleBezel</object-name>
+     <object-name>InnerBezel</object-name>
+  <emission>
+      <red>   0.028 </red>
+      <green> 0.014 </green>
+      <blue>  0.007 </blue>
+      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+    </emission>
+ </animation>
+ 
 
  <animation>
   <type>rotate</type>

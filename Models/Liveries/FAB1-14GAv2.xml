@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<sim>
+    <model>
+	        <livery>
+	            <name type="string">FAB 1-14 GAv #2</name>
+	            <texture>Liveries/FAB1-14GAv2/FAB1-14GAv2-fuselage.png</texture>
+	        </livery>
+			<wings>
+				<name type="string">FAB 1-14 GAv</name>
+				<texture>Liveries/FAB1-14GAv2/FAB1-14GAv2-wings.png</texture>
+			</wings>        
+			<cabine>
+				<name type="string">Pampa</name>
+				<texture>turbine.png</texture>
+			</cabine>    
+			<fueltk>
+				<name type="string">FAB 1-14 GAv</name>
+				<texture>Liveries/FAB1-14GAv2/FAB1-14GAv2-fueltank.png</texture>
+			</fueltk> 
+	</model>
+	<rendering>
+    <refl_correction type="string">-0.47</refl_correction>
+    </rendering>
+</sim>
+</PropertyList>

@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+
+
+Add the folowing to  yor set file, after the </set> tag
+
+  <instrumentation>
+            <wxradar>
+                <switch type="string" archive="y">ON</switch>
+                <mode-control type="int" archive="y">1</mode-control>
+                <display-controls>
+                        <WX type="bool" archive="y">true</WX>
+                        <centre type="bool"  archive="y">true</centre>
+                        <data type="bool"  archive="y">false</data>
+                        <pos type="bool" archive="y">false</pos>
+                        <rotate type="bool" archive="y">true</rotate>
+                        <symbol type="bool" archive="y">true</symbol>
+                </display-controls>
+                <serviceable type="bool">true</serviceable>
+                <range type="int"  archive="y">40</range>
+                <mode type="string" archive="y">WX</mode>
+                <lightning type="bool"  archive="y">false</lightning>
+                <display-mode type="string"  archive="y">plan</display-mode>
+                <minimized type="bool" archive="y">false</minimized>
+            </wxradar>
+    </instrumentation>
+
+  <nasal>
+          <!-- Copy radar.nas  and terrain.nas from the radar folder to your aircraft Nasal folder -->
+		  
+            <radar>
+                <file>Aircraft/youraircraft/Nasal/radar.nas</file>  
+            </radar>
+         
+	    <terrain>
+                    <file>Aircraft/youraircraft/Nasal/terrain.nas</file>
+            </terrain>
+    </nasal>

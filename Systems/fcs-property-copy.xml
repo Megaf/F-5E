@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<system name="fcs-property-copy">
+
+  <channel name="slats">
+
+     <fcs_function name="systems/fcs/copy-slat-pos-norm">
+       <function>
+         <product>
+            <property>systems/autoslats/slat-pos-norm</property>
+           <value>1</value>
+         </product>
+       </function>
+       <output>/surface-positions/slat-pos-norm</output>
+     </fcs_function>
+
+  </channel>
+
+  <!--channel name="afterburner">
+
+     <fcs_function name="systems/fcs/afterburner-zero-on">
+       <function>
+         <product>
+	   <property>/engines/engine[0]/augmentation</property>
+           <value>1</value>
+         </product>
+       </function>
+       <output>/engines/engine[0]/afterburner</output>
+     </fcs_function>
+
+  </channel-->
+</system>

@@ -1,0 +1,502 @@
+<!-- A wrapper file for the F-5E 3D model ( YASIM Version ) -->
+
+<PropertyList>
+
+
+<model>
+<path>Aircraft/F-5E/Models/Cockpit/mainpanel.ac</path>
+</model>
+
+<model>
+<path>Aircraft/F-5E/Models/Cockpit/tub.ac</path>
+</model>
+
+<!-- ******************** INSTRUMENTS *******************-->
+
+<model>
+  <path>Aircraft/F-5E/Models/Instruments/aoa-indicater/aoa-indicater.xml</path>
+  <offsets>
+   <x-m>-3.04</x-m>
+   <y-m> -0.078</y-m>
+   <z-m> 0.894</z-m>
+  </offsets>
+   
+ </model>
+
+<model>
+<name>HUD-ILS</name>
+  <path>Aircraft/F-5E/Models/Instruments/ILS/ILS.xml</path>
+  <offsets>
+   <x-m>-3.06</x-m>
+   <y-m>0</y-m>
+   <z-m> 0.94</z-m>
+  </offsets>
+   
+ </model>
+ 
+ <animation>
+        <type>select</type>
+       
+        <object-name>HUD-ILS</object-name>
+     
+		
+        <condition>
+            <equals>
+                <property>controls/switches/hudils</property>
+                <value>true</value>
+            </equals>
+        </condition>
+    </animation>
+
+
+
+<model>
+  <path>Aircraft/F-5E/Models/Instruments/MagCompass/comp.xml</path>
+  <offsets>
+   <x-m>-3.1</x-m>
+   <y-m> 0.18</y-m>
+   <z-m> 1.05</z-m>
+  </offsets>
+   <overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>0.5</x-offset>
+    <y-offset>1</y-offset>
+    <z-offset>1</z-offset>
+   </animation>
+  </overlay>
+ </model>
+
+
+
+ <model>
+  <path>Aircraft/F-5E/Models/Instruments/AI/attitude.xml</path>
+  <offsets>
+   <x-m>-3.20</x-m>
+   <y-m> -0.118</y-m>
+   <z-m>0.799</z-m>
+  </offsets>
+ 
+
+ </model>
+
+ <!-- nao necessario -->
+ <model>
+  <path>Aircraft/F-5E/Models/Instruments/RDMI/RDMI.xml</path>
+  <offsets>
+   <x-m>-3.199</x-m>
+   <y-m>-0.117</y-m>
+   <z-m>0.718</z-m>
+  </offsets>
+     <overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>0.74</y-offset>
+    <z-offset>0.74</z-offset>
+   </animation>
+  </overlay>	
+ </model>
+
+
+ <model>
+  <path>Aircraft/F-5E/Models/Instruments/RDMI/nav-select.xml</path>
+  <offsets>
+   <x-m>-3.193</x-m>
+   <y-m>-0.295</y-m>
+   <z-m>0.766</z-m>
+  </offsets>
+     <overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>0.74</y-offset>
+    <z-offset>0.74</z-offset>
+   </animation>
+  </overlay>	
+ </model>
+
+ <model>
+
+
+  <path>Aircraft/F-5E/Models/Instruments/n2/Lrpm.xml</path>
+  <offsets>
+   <x-m>-3.18</x-m>
+   <y-m>0.195</y-m>
+   <z-m>0.792</z-m>
+  </offsets>
+   <overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>0.85</y-offset>
+    <z-offset>0.85</z-offset>
+   </animation>
+  </overlay>	
+ </model>
+
+<model>
+ 
+  <path>Aircraft/F-5E/Models/Instruments/n2/Rrpm.xml</path>
+  <offsets>
+   <x-m>-3.18</x-m>
+   <y-m>0.242</y-m>
+   <z-m>0.792</z-m>
+  </offsets>
+   <overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>0.85</y-offset>
+    <z-offset>0.85</z-offset>
+   </animation>
+  </overlay>	
+ </model>
+
+ <model>
+
+  <path>Aircraft/F-5E/Models/Instruments/EGT/EGT-1.xml</path>
+  <offsets>
+  <x-m>-3.19</x-m>
+   <y-m>0.192</y-m>
+   <z-m>0.744</z-m>
+  </offsets>
+   <overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>0.9</y-offset>
+    <z-offset>0.9</z-offset>
+   </animation>
+  </overlay>	
+ </model>
+
+ <model>
+
+  <path>Aircraft/F-5E/Models/Instruments/EGT/EGT-2.xml</path>
+  <offsets>
+   <x-m>-3.19</x-m>
+    <y-m>0.238</y-m>
+   <z-m>0.744</z-m>
+  </offsets>
+   <overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>0.9</y-offset>
+    <z-offset>0.9</z-offset>
+   </animation>
+  </overlay>	
+ </model>
+
+<model>
+
+  <path>Aircraft/F-5E/Models/Instruments/Nozzle/nozzle-1.xml</path>
+  <offsets>
+   <x-m>-3.19</x-m>
+   <y-m>0.188</y-m>
+   <z-m>0.697</z-m>
+  </offsets>
+  <overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>0.9</y-offset>
+    <z-offset>0.9</z-offset>
+   </animation>
+  </overlay>
+ </model>
+
+<model>
+
+  <path>Aircraft/F-5E/Models/Instruments/Nozzle/nozzle-2.xml</path>
+  <offsets>
+   <x-m>-3.19</x-m>
+    <y-m>0.233</y-m>
+   <z-m>0.697</z-m>
+  </offsets>
+  <overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>0.9</y-offset>
+    <z-offset>0.9</z-offset>
+   </animation>
+  </overlay>
+ </model>
+ 
+ <model>
+
+  <path>Aircraft/F-5E/Models/Instruments/oil-p/oil-p-LH.xml</path>
+  <offsets>
+   <x-m>-3.187</x-m>
+    <y-m>0.279</y-m>
+   <z-m>0.696</z-m>
+  </offsets>
+  <overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>1.45</y-offset>
+    <z-offset>1.45</z-offset>
+   </animation>
+  </overlay>
+ </model>
+ 
+ <model>
+
+  <path>Aircraft/F-5E/Models/Instruments/oil-p/oil-p-RH.xml</path>
+  <offsets>
+   <x-m>-3.187</x-m>
+    <y-m>0.275</y-m>
+   <z-m>0.65</z-m>
+  </offsets>
+  <overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>1.45</y-offset>
+    <z-offset>1.45</z-offset>
+   </animation>
+  </overlay>
+ </model>
+
+
+<model>
+
+  <path>Aircraft/F-5E/Models/Instruments/FuelQ/fuel-gauge.xml</path>
+  <offsets>
+   <x-m>-3.182</x-m>
+    <y-m>0.229</y-m>
+   <z-m>0.651</z-m>
+  </offsets>
+  <overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>0.5</y-offset>
+    <z-offset>0.5</z-offset>
+   </animation>
+  </overlay>
+ </model>
+ 
+ <model>
+
+  <path>Aircraft/F-5E/Models/Instruments/FuelFlow/ff.xml</path>
+  <offsets>
+   <x-m>-3.183</x-m>
+    <y-m>0.184</y-m>
+   <z-m>0.651</z-m>
+  </offsets>
+   <overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>0.7</y-offset>
+    <z-offset>0.7</z-offset>
+   </animation>
+  </overlay>
+ </model>
+
+
+<model>
+
+  <path>Aircraft/F-5E/Models/Instruments/accel/accel.xml</path>
+  <offsets>
+   <x-m>-3.183</x-m>
+    <y-m>0.124</y-m>
+   <z-m>0.654</z-m>
+  </offsets>
+   <overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>0.75</y-offset>
+    <z-offset>0.75</z-offset>
+   </animation>
+  </overlay>
+ </model>
+
+<model>
+
+  <path>Aircraft/F-5E/Models/Instruments/rwr/rwr.xml</path>
+  <offsets>
+   <x-m>-3.171</x-m>
+    <y-m>0.1315</y-m>
+   <z-m>0.7205</z-m>
+  </offsets>
+  <overlay>
+		 <animation n="105">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>0.3</y-offset>
+    <z-offset>0.3</z-offset>
+   </animation>
+  </overlay>
+ </model>
+
+
+ <model>
+
+  <path>Aircraft/F-5E/Models/Instruments/asi/asi.xml</path>
+  <offsets>
+   <x-m>-3.18</x-m>
+   <y-m> -0.194</y-m>
+   <z-m>0.798</z-m>
+  </offsets>
+   <overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>0.74</y-offset>
+    <z-offset>0.74</z-offset>
+   </animation>
+  </overlay>
+ </model>
+
+ <model>
+
+
+  <path>Aircraft/F-5E/Models/Instruments/alt/alt.xml</path>
+  <offsets>
+   <x-m>-3.195</x-m>
+   <y-m>-0.188</y-m>
+   <z-m>0.72</z-m>
+    </offsets>
+   <overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>0.72</y-offset>
+    <z-offset>0.72</z-offset>
+   </animation>
+  </overlay>
+ 
+ </model>
+
+<model>
+
+  <path>Aircraft/F-5E/Models/Instruments/IVSI/IVSI.xml</path>
+  <offsets>
+   <x-m>-3.193</x-m>
+   <y-m> -0.107</y-m>
+   <z-m> 0.657</z-m>
+  </offsets>
+  <overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>0.83</y-offset>
+    <z-offset>0.83</z-offset>
+   </animation>
+  </overlay>
+  
+ </model>
+ 
+  <model>
+  <path>Aircraft/F-5E/Models/Instruments/AI/attitude.xml</path>
+  <offsets>
+   <x-m>-3.189</x-m>
+   <y-m> -0.16</y-m>
+   <z-m> 0.657</z-m>
+  </offsets>
+ <overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>0.3</x-offset>
+    <y-offset>0.7</y-offset>
+    <z-offset>0.7</z-offset>
+   </animation>
+  </overlay>
+  </model>
+  
+
+ 
+  <model>
+  <path>Aircraft/F-5E/Models/Instruments/AOAb/aoa-gauge.xml</path>
+  <offsets>
+   <x-m>-3.186</x-m>
+   <y-m> -0.214</y-m>
+   <z-m> 0.657</z-m>
+  </offsets>
+ <overlay>
+		 <animation n="100">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1</x-offset>
+    <y-offset>0.95</y-offset>
+    <z-offset>0.95</z-offset>
+   </animation>
+  </overlay>
+  </model>
+  
+  <model>
+  <path>Aircraft/F-5E/Models/Instruments/gearlever/Train-Cde.xml</path>
+  <offsets>
+   <x-m>-3.17</x-m>
+   <y-m> -0.289</y-m>
+   <z-m> 0.675</z-m>
+  </offsets>
+ 
+  </model>
+
+<model>  
+ 
+  <path>Aircraft/F-5E/Models/Instruments/radar/radar.xml</path>
+  <offsets>
+   <x-m>-3.21</x-m>
+   <y-m> 0.0</y-m>
+   <z-m> 0.68</z-m>
+  </offsets>
+ </model> 
+
+
+ <!-- Left side panel -->
+
+ <model>
+  <path>Aircraft/F-5E/Models/Instruments/power_lever/power_lever.xml</path>
+  <offsets>
+   <x-m>-3.12</x-m>
+   <y-m> -0.404</y-m>
+   <z-m> 0.46</z-m>
+   <pitch-deg>3</pitch-deg>
+  </offsets>
+
+  </model>
+  
+  
+   <!-- Right side panel -->
+
+ <model>
+  <path>Aircraft/F-5E/Models/Instruments/canopy/canopy-lever.xml</path>
+  <offsets>
+   <x-m>-2.9</x-m>
+   <y-m> 0.455</y-m>
+   <z-m> 0.5</z-m>
+   <pitch-deg>3</pitch-deg>
+  </offsets>
+
+  </model>
+ 
+	
+</PropertyList>
+ 

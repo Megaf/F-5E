@@ -1,0 +1,33 @@
+Still to be done:
+
+ - jsbsim fuel flow
+ - 150gal droptank model
+ - leading edge flap effects in jsbsim
+ - port yasim autoflaps to jsb
+ - flap system overrride
+
+Done:
+
+ - convert sonic boom to mono - DONE
+ - ALS afterburner effect - DONE
+ - multiplayer
+	- canopy	- DONE
+	- rudder (yasim/jsb issue needs mp prop) - DONE
+	- lights	- DONE
+	- payloads	- DONE
+	- ailerons	- DONE
+	- slats		- DONE
+ - reorganise liveries (delete old, make prototype default) - DONE
+ - remove dependency on DavePack (copy effects over) - DONE
+ - enable/disable limits in jsbsim & yasim fdm - DONE
+ - remap nav lights, tip rails, centre pylon, fuel probe - DONE
+ - payload menu for jsb - DONE
+ - create ability to make pylons visible/invisible - DONE
+ - remove unneeded set files - DONE
+ - splash screens - DONE
+ - tags - DONE
+ - thumbnail - DONE
+ - ratings - DONE
+ - enable/disable in flight refueling probe - DONE
+ - mp multi coloured display smoke - DONE
+ - yasim auto flaps/slats - DONE

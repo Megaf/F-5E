@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<sim>
+    <model>
+	        <livery>
+	            <name type="string">Swiss AF, Fliegerstaffel 6</name>
+	            <texture>Liveries/SwAFFL6/SwAFFL6-fuselage.png</texture>
+	        </livery>
+			<wings>
+				<name type="string">SwAFFL6</name>
+				<texture>Liveries/SwAFFL6/SwAFFL6-wings.png</texture>
+			</wings>        
+			<cabine>
+				<name type="string">Pampa</name>
+				<texture>turbine.png</texture>
+			</cabine>    
+			<fueltk>
+				<name type="string">SwAFFL11</name>
+				<texture>Liveries/SwAFFL6/SwAFFL6-fueltank.png</texture>
+			</fueltk> 
+	</model>
+	<rendering>
+    <refl_correction type="string">-0.3</refl_correction>
+    </rendering>
+</sim>
+</PropertyList>

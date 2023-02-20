@@ -5,11 +5,11 @@ var lightsPath = "lightpack/"; #path to the property node, where all internal va
 #list of switches for lights - if you don't intend to use some light, assign it nil value instead, like whateverSwitch = nil; and you don't need to care about anything else
 var navSwitch = "/controls/lighting/nav-lights-switch";
 var beaconSwitch = "/controls/lighting/beacon-switch";
-var strobeSwitch = "/controls/lighting/strobe-switch";
+var strobeSwitch = nil;
 var landingSwitch = "/controls/lighting/landing-lights-switch";
-var taxiSwitch = "/controls/lighting/taxi-light-switch";
-var probeSwitch = "/controls/lighting/probe-light-switch";
-var whiteSwitch = "/controls/lighting/white-light-switch";
+var taxiSwitch = nil;
+var probeSwitch = nil;
+var whiteSwitch = nil;
 
 #switch this from 1 to 0 if you want to use advanced cyclical fading animation of the the nav lights instead of being stable on when the switch is on
 navStillOn = 1;

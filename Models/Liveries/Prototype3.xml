@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<sim>
+    <model>
+	        <livery>
+	            <name type="string">Northrop Prototype / Demonstrator 3</name>
+	            <texture>Liveries/Prototype3/Prototype3-fuselage.png</texture>
+	        </livery>
+			<wings>
+				<name type="string">Prototype3</name>
+				<texture>Liveries/Prototype3/Prototype3-wings.png</texture>
+			</wings>        
+			<cabine>
+				<name type="string">Pampa</name>
+				<texture>Pampa-turbine.png</texture>
+			</cabine>    
+			<fueltk>
+				<name type="string">Prototype3</name>
+				<texture>Liveries/Prototype3/Prototype3-fueltank.png</texture>
+			</fueltk> 
+	</model>
+		<rendering>
+    <refl_correction type="string">-0.3</refl_correction>
+    </rendering>
+</sim>
+</PropertyList>

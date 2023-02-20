@@ -43,7 +43,7 @@
           <test value="systems/chute/unfurl-norm">
                 /sim/multiplay/generic/int[6] == 1
           </test>
-       <output>/sim/multiplay/generic/float[6]</output>
+       <output>/sim/multiplay/generic/float[26]</output>
    </switch>
 
   </channel>

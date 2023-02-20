@@ -1,0 +1,234 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<!-- Autoflaps -->
+	<filter>
+		<type>gain</type>
+		<gain>1</gain>
+		<input>
+			<expression>
+				<table>
+					<property>/position/altitude-ft</property>
+					<entry><ind>    0</ind><dep>0.31</dep></entry>
+					<entry><ind> 5000</ind><dep>0.34</dep></entry>
+					<entry><ind>10000</ind><dep>0.37</dep></entry>
+					<entry><ind>15000</ind><dep>0.41</dep></entry>
+					<entry><ind>20000</ind><dep>0.45</dep></entry>
+					<entry><ind>25000</ind><dep>0.50</dep></entry>
+					<entry><ind>30000</ind><dep>0.55</dep></entry>
+					<entry><ind>35000</ind><dep>0.61</dep></entry>
+					<entry><ind>40000</ind><dep>0.68</dep></entry>
+					<entry><ind>45000</ind><dep>0.76</dep></entry>
+					<entry><ind>50000</ind><dep>0.84</dep></entry>
+				</table>
+			</expression>
+		</input>
+		<output>/surface-positions/autoflaps-limit-low</output>
+	</filter>
+
+	<filter>
+		<type>gain</type>
+		<gain>1</gain>
+		<input>
+			<expression>
+				<table>
+					<property>/position/altitude-ft</property>
+					<entry><ind>    0</ind><dep>0.38</dep></entry>
+					<entry><ind> 5000</ind><dep>0.41</dep></entry>
+					<entry><ind>10000</ind><dep>0.45</dep></entry>
+					<entry><ind>15000</ind><dep>0.50</dep></entry>
+					<entry><ind>20000</ind><dep>0.55</dep></entry>
+					<entry><ind>25000</ind><dep>0.60</dep></entry>
+					<entry><ind>30000</ind><dep>0.67</dep></entry>
+					<entry><ind>35000</ind><dep>0.74</dep></entry>
+					<entry><ind>40000</ind><dep>0.82</dep></entry>
+					<entry><ind>45000</ind><dep>0.91</dep></entry>
+					<entry><ind>49500</ind><dep>1.0</dep></entry>
+				</table>
+			</expression>
+		</input>
+		<output>/surface-positions/autoflaps-limit-medium</output>
+	</filter>
+
+	<filter>
+		<type>gain</type>
+		<gain>1</gain>
+		<input>
+			<expression>
+				<table>
+					<property>/position/altitude-ft</property>
+					<entry><ind>    0</ind><dep>0.82</dep></entry>
+					<entry><ind> 5000</ind><dep>0.9</dep></entry>
+					<entry><ind>10500</ind><dep>1.0</dep></entry>
+				</table>
+			</expression>
+		</input>
+		<output>/surface-positions/autoflaps-limit-high</output>
+	</filter>
+
+	<logic>
+		<input>
+			<less-than>
+        		<property>/velocities/mach</property>
+        		<property>/surface-positions/autoflaps-limit-low</property>
+			</less-than>
+		</input>
+		<output>/surface-positions/flaps-full</output>
+	</logic>
+
+	<logic>
+		<input>
+			<and>
+				<greater-than>
+        			<property>/velocities/mach</property>
+        			<property>/surface-positions/autoflaps-limit-low</property>
+				</greater-than>
+				<less-than>
+        			<property>/velocities/mach</property>
+        			<property>/surface-positions/autoflaps-limit-medium</property>
+				</less-than>
+			</and>
+		</input>
+		<output>/surface-positions/flaps-maneuver1</output>
+	</logic>
+
+	<logic>
+		<input>
+			<and>
+				<greater-than>
+        			<property>/velocities/mach</property>
+        			<property>/surface-positions/autoflaps-limit-medium</property>
+				</greater-than>
+				<less-than>
+        			<property>/velocities/mach</property>
+        			<property>/surface-positions/autoflaps-limit-high</property>
+				</less-than>
+			</and>
+		</input>
+		<output>/surface-positions/flaps-maneuver2</output>
+	</logic>
+
+	<logic>
+		<input>
+			<greater-than>
+        		<property>/velocities/mach</property>
+        		<property>/surface-positions/autoflaps-limit-high</property>
+			</greater-than>
+		</input>
+		<output>/surface-positions/flaps-up</output>
+	</logic>
+
+	<filter>
+		<enable>
+			<condition>
+				<property>/surface-positions/flaps-full</property>
+			</condition>
+		</enable>
+		<type>gain</type>
+		<gain>-1</gain>
+		<reference>
+			<value>1</value>
+		</reference>
+		<output>/controls/flight/autoflaps</output>
+	</filter>
+
+	<filter>
+		<enable>
+			<condition>
+				<property>/surface-positions/flaps-full</property>
+			</condition>
+		</enable>
+		<type>gain</type>
+		<gain>-1</gain>
+		<reference>
+			<value>1</value>
+		</reference>
+		<output>/controls/flight/autoslats</output>
+	</filter>
+
+	<filter>
+		<enable>
+			<condition>
+				<property>/surface-positions/flaps-maneuver1</property>
+			</condition>
+		</enable>
+		<type>gain</type>
+		<gain>-1</gain>
+		<reference>
+			<value>0.8</value>
+		</reference>
+		<output>/controls/flight/autoflaps</output>
+	</filter>
+
+	<filter>
+		<enable>
+			<condition>
+				<property>/surface-positions/flaps-maneuver1</property>
+			</condition>
+		</enable>
+		<type>gain</type>
+		<gain>-1</gain>
+		<reference>
+			<value>0.75</value>
+		</reference>
+		<output>/controls/flight/autoslats</output>
+	</filter>
+
+	<filter>
+		<enable>
+			<condition>
+				<property>/surface-positions/flaps-maneuver2</property>
+			</condition>
+		</enable>
+		<type>gain</type>
+		<gain>-1</gain>
+		<reference>
+			<value>0.4</value>
+		</reference>
+		<output>/controls/flight/autoflaps</output>
+	</filter>
+
+	<filter>
+		<enable>
+			<condition>
+				<property>/surface-positions/flaps-maneuver2</property>
+			</condition>
+		</enable>
+		<type>gain</type>
+		<gain>-1</gain>
+		<reference>
+			<value>0.5</value>
+		</reference>
+		<output>/controls/flight/autoslats</output>
+	</filter>
+
+	<filter>
+		<enable>
+			<condition>
+				<property>/surface-positions/flaps-up</property>
+			</condition>
+		</enable>
+		<type>gain</type>
+		<gain>-1</gain>
+		<reference>
+			<value>0</value>
+		</reference>
+		<output>/controls/flight/autoflaps</output>
+	</filter>
+
+	<filter>
+		<enable>
+			<condition>
+				<property>/surface-positions/flaps-up</property>
+			</condition>
+		</enable>
+		<type>gain</type>
+		<gain>-1</gain>
+		<reference>
+			<value>0</value>
+		</reference>
+		<output>/controls/flight/autoslats</output>
+	</filter>
+
+</PropertyList>

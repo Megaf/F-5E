@@ -4,7 +4,7 @@
 
   <submodel>
     <name>left-guns</name>
-    <model>Aircraft/DavePack/Stores/guns/tracer.xml</model>
+    <model>Aircraft/F-5E/Models/Stores/guns/tracer.xml</model>
     <trigger>/controls/armament/trigger</trigger>
     <speed>2840.0</speed>
     <repeat>true</repeat>
@@ -24,7 +24,7 @@
 
   <submodel>
     <name>right-guns</name>
-    <model>Aircraft/DavePack/Stores/guns/tracer.xml</model>
+    <model>Aircraft/F-5E/Models/Stores/guns/tracer.xml</model>
     <trigger>/controls/armament/trigger</trigger>
     <speed>2840.0</speed>
     <repeat>true</repeat>
@@ -44,7 +44,7 @@
 
   <submodel> 
     <name>left-smoke</name>
-    <model>Aircraft/DavePack/Stores/guns/smoke.xml</model>
+    <model>Aircraft/F-5E/Models/Stores/guns/smoke.xml</model>
     <trigger>controls/armament/trigger</trigger>
     <speed>10</speed>
     <repeat>true</repeat>
@@ -63,7 +63,7 @@
 
   <submodel> 
     <name>right-smoke</name>
-    <model>Aircraft/DavePack/Stores/guns/smoke.xml</model>
+    <model>Aircraft/F-5E/Models/Stores/guns/smoke.xml</model>
     <trigger>controls/armament/trigger</trigger>
     <speed>10</speed>
     <repeat>true</repeat>

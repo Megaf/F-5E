@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<sim>
+    <model>
+	        <livery>
+	            <name type="string">FGUK 10 years</name>
+	            <texture>Liveries/FGUK/FGUK-fuselage.png</texture>
+	        </livery>
+			<wings>
+				<name type="string">FGUK</name>
+				<texture>Liveries/FGUK/FGUK-wings.png</texture>
+			</wings>        
+			<cabine>
+				<name type="string">Pampa</name>
+				<texture>Pampa-turbine.png</texture>
+			</cabine>    
+			<fueltk>
+				<name type="string">FGUK</name>
+				<texture>Liveries/FGUK/FGUK-fueltank.png</texture>
+			</fueltk> 
+	</model>
+	<rendering>
+    <refl_correction type="string">-0.2</refl_correction>
+    </rendering>
+</sim>
+</PropertyList>

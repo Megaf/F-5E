@@ -161,7 +161,7 @@
   <engine>
    <name>engine1</name>
    <mode>looped</mode>
-   <path>Aircraft/DavePack/Sounds/milpower.wav</path>
+   <path>Aircraft/F-5E/Sounds/milpower.wav</path>
    <condition>
     <property>engines/engine[0]/running</property>
     <not>
@@ -187,7 +187,7 @@
   <engine>
    <name>engine2</name>
    <mode>looped</mode>
-   <path>Aircraft/DavePack/Sounds/milpower.wav</path>
+   <path>Aircraft/F-5E/Sounds/milpower.wav</path>
    <condition>
     <property>engines/engine[1]/running</property>
     <not>

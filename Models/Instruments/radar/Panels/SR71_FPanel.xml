@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+
+<!--
+    Usable with FlightGear
+    Property of Gerard Robin -France
+    Copyright License:  GPL
+-->
+<!--                    Auteur :      Gerard ROBIN                       COPYRIGHT-->
+<PropertyList>
+
+    <path>Models/Panel-SR71.ac</path>
+<texture-path>Models/Textures/</texture-path>
+
+
+ <!--===================GABARIT DE CENTRAGE====ne pas enlever========-->
+    <animation>
+        <type>select</type>
+        <object-name>Gabarit-Position-Panel</object-name>
+        <condition>
+                <equals>
+                    <property>sim/current-view/view-number</property>
+                    <value>999</value>
+                </equals>
+        </condition>
+    </animation>
+    <!--==================================================-->
+
+<!--==============Centre======================= -->
+    <model>
+        <name>Radar</name>
+            <path>Aircraft/F-5E/Models/Instruments/Radar/Radar2d-bb.xml</path>
+            <offsets>
+                    <x-m>-0.0238927</x-m>
+                    <y-m>0</y-m>
+                    <z-m>-0.289447</z-m>
+                    <pitch-deg>-40</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>RadarDummy</name>
+            <path>Aircraft/F-5E/Models/Instruments/Radar/Radar2d-dummy-bb.xml</path>
+            <offsets>
+                    <x-m>-0.0238927</x-m>
+                    <y-m>0</y-m>
+                    <z-m>-0.289447</z-m>
+                    <pitch-deg>-40</pitch-deg>
+        </offsets>
+    </model>
+
+    <animation>
+            <type>select</type>
+            <object-name>Radar</object-name>
+            <condition>
+                    <greater-than>
+                            <property>/systems/electrical/outputs/radar</property>
+                            <value>27</value>
+                    </greater-than>
+            </condition>
+    </animation>
+
+    <animation>
+            <type>select</type>
+            <object-name>RadarDummy</object-name>
+            <condition>
+                    <less-than>
+                            <property>/systems/electrical/outputs/radar</property>
+                            <value>26.9999</value>
+                    </less-than>
+            </condition>
+    </animation>
+
+  
+
+</PropertyList>
