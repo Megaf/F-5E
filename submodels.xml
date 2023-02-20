@@ -19,7 +19,7 @@
     <wind>false</wind>
     <weight>0.1069</weight>
     <cd>0.193</cd>
-    <eda>0.00136354</eda> 
+    <eda>0.00136354</eda>
   </submodel>
 
   <submodel>
@@ -78,6 +78,46 @@
     <wind>true</wind>
     <buoyancy>33</buoyancy>
     <life>1</life>
+  </submodel>
+
+  <submodel>
+    <name>right-muzzle-flash</name>
+    <model>Aircraft/F-5E/Models/Stores/guns/muzzle-flash.xml</model>
+    <trigger>/controls/armament/trigger</trigger>
+    <speed>0</speed>
+    <repeat>true</repeat>
+    <delay>0.15</delay>
+    <count>280</count>
+    <x-offset>20.0</x-offset>
+    <y-offset>1.0</y-offset>
+    <z-offset> 1.0</z-offset>
+    <yaw-offset>0.0</yaw-offset>
+    <pitch-offset>0</pitch-offset>
+    <life>0.01</life>
+    <wind>false</wind>
+    <weight>0.0</weight>
+    <cd>0.0</cd>
+    <eda>50</eda>
+  </submodel>
+
+  <submodel>
+    <name>left-muzzle-flash</name>
+    <model>Aircraft/F-5E/Models/Stores/guns/muzzle-flash.xml</model>
+    <trigger>/controls/armament/trigger</trigger>
+    <speed>0</speed>
+    <repeat>true</repeat>
+    <delay>0.15</delay>
+    <count>280</count>
+    <x-offset>20.0</x-offset>
+    <y-offset>-1.0</y-offset>
+    <z-offset> 1.0</z-offset>
+    <yaw-offset>0.0</yaw-offset>
+    <pitch-offset>0</pitch-offset>
+    <life>0.01</life>
+    <wind>false</wind>
+    <weight>0.0</weight>
+    <cd>0.0</cd>
+    <eda>50</eda>
   </submodel>
 
   <!-- Drag Chute Jettison -->
