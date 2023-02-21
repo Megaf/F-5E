@@ -8,9 +8,9 @@
  
   <effect>
    <inherits-from>Effects/model-transparent</inherits-from>
-   <condition>
-    <property>/sim/rendering/rembrandt/enabled</property>
-   </condition>
+    <condition>
+      <property>/sim/rendering/shaders/use-shaders</property>
+    </condition>
    <object-name>ReheatInner</object-name>
    <object-name>ReheatOuter</object-name>
    <object-name>ExternalFlame</object-name>   
