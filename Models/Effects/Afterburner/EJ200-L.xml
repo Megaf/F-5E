@@ -20,7 +20,6 @@
    <type>select</type>
    <object-name>ReheatInner</object-name>
    <object-name>ReheatOuter</object-name>
-   <object-name>ExternalFlame</object-name>
    <condition>
 	 <property>sim/multiplay/generic/float[8]</property>
    </condition>
