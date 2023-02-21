@@ -4,8 +4,6 @@
 
   <path>EJ200.ac</path>
 
-
-
   <effect>
     <inherits-from>Effects/model-transparent</inherits-from>
     <condition>
