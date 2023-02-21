@@ -8,13 +8,7 @@
     <type>select</type>
     <object-name>light</object-name>
     <condition>
-      <and>
-        <property>/sim/rendering/rembrandt/enabled</property>
-        <greater-than>
-          <property>/sim/rendering/shaders/lights</property>
-          <value>1</value>
-        </greater-than>
-      </and>
+      <property>/sim/rendering/shaders/use-shaders</property>
     </condition>
   </animation>
 
